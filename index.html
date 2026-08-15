@@ -83,7 +83,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
 
-    <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
+    <a href="https://ahmedrashwandev-hub.github.io/Personal-Portfolio/" class="font-display font-bold text-xl tracking-tight relative z-10">
       <span class="text-zinc-900 dark:text-white">Ahmed</span><span class="text-accent"> Rashwan</span>
     </a>
 
@@ -215,71 +215,62 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   </div>
 </section>
 
-<!-- ═══ WORK ═══ -->
+
 <section id="work" class="py-24">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
-      <div>
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portfolio</p>
-        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Selected work</h2>
+    <div class="mb-14">
+      <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portfolio</p>
+      <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">All Projects</h2>
+      <p class="reveal d2 text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mt-4 mb-8">A complete look at my work across UI/UX design, frontend development and landing pages.</p>
+      <div class="reveal d3 flex flex-wrap gap-2">
+        <template x-for="f in filterOptions" :key="f.value">
+          <button
+            @click="filter = f.value"
+            :class="filter === f.value ? 'bg-accent text-white border-accent' : 'bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-700 hover:border-accent'"
+            class="text-sm px-4 py-1.5 rounded-full border transition-colors"
+            x-text="f.label">
+          </button>
+        </template>
       </div>
-      <a href="projects.html" class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">All projects →</a>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-2">
-        <div class="pf w-full h-64 md:h-80">
-          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=900&q=80" alt="Novu SaaS Dashboard" loading="lazy">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <template x-for="p in allProjects" :key="p.id">
+        <div
+          x-show="filter === 'all' || p.category === filter"
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0 scale-95 translate-y-2"
+          x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+          x-transition:leave="transition ease-in duration-200"
+          x-transition:leave-start="opacity-100 scale-100"
+          x-transition:leave-end="opacity-0 scale-95">
+          <article class="card-h group h-full rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <a :href="p.url" class="block pf w-full h-52">
+              <img :src="p.img" :alt="p.title" loading="lazy"/>
+            </a>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <template x-for="tag in p.tags" :key="tag">
+                  <span class="text-xs px-2.5 py-1 rounded-full"
+                    :class="tag === p.categoryLabel ? 'bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'"
+                    x-text="tag"></span>
+                </template>
+              </div>
+              <a :href="p.url">
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors" x-text="p.title"></h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4" x-text="p.desc"></p>
+              <div class="flex items-center justify-between">
+                <a :href="p.url" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View project →</a>
+                <span class="text-xs text-zinc-400" x-text="p.year"></span>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="p-7">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">SaaS</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Figma</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Tailwind</span>
-          </div>
-          <a href="case-study.html">
-            <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Novu — SaaS Dashboard</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quis, odit nam aperiam fugiat optio libero. Nisi, minus officiis eius odio tempora velit fugit at, id labore ut libero reiciendis!<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa ducimus repudiandae eligendi veritatis dicta quo fuga fugiat autem tempore perspiciatis illo doloremque est labore, molestiae eius, voluptatum ex aut quibusdam.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur neque ipsum eveniet eligendi dolores, dicta beatae? Velit iusto nemo praesentium architecto, ipsa excepturi facere quisquam, reprehenderit a cumque sapiente? Laudantium!</p>
-          <a href="case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        </div>
-      </article>
-
-      <article class="card-h reveal d2 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-48">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Finlo Fintech App" loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">Fintech</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Landing page</span>
-          </div>
-          <a href="case-study.html">
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Finlo — Fintech App</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Marketing site and onboarding flow for a personal finance app targeting young professionals. Tailwind CSS + Alpine.js.</p>
-          <a href="case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study →</a>
-        </div>
-      </article>
-
-      <article class="card-h reveal d3 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-48">
-          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" alt="Orea Creative Agency" loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">Agency</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Animation</span>
-          </div>
-          <a href="case-study.html">
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Orea — Creative Agency</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Bold editorial site for a Paris-based branding studio. Scroll-driven animations and custom cursor to match their premium positioning.</p>
-          <a href=case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study →</a>
-        </div>
-      </article>
-
+      </template>
+    </div>
+    <div x-show="visibleCount === 0" x-cloak class="text-center py-20">
+      <p class="text-zinc-400 text-sm">No projects in this category yet.</p>
     </div>
   </div>
 </section>
@@ -291,7 +282,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 
       <div class="reveal order-2 md:order-1">
         <div class="pf w-full aspect-square max-w-sm mx-auto rounded-3xl">
-          <img src="photo/AhmedRashwan.jpg" alt="Eliott" loading="lazy">
+          <img src="https://raw.githubusercontent.com/rahul-jha98/rahul-jha98/main/techstack.gif" alt="Eliott" loading="lazy">
         </div>
       </div>
 
@@ -629,7 +620,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
             </div>
 
             <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white">
-              Computer Science Graduate
+              Computers and Information Graduate
             </h3>
 
             <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
@@ -985,6 +976,29 @@ function app() {
     mm: false,
     sc: false,
     s: 'hero',
+    filter: 'all',
+    filterOptions: [
+      { value: 'all',       label: 'All (9)' },
+      { value: 'saas',      label: 'SaaS' },
+      { value: 'landing',   label: 'Landing page' },
+      { value: 'agency',    label: 'Agency' },
+      { value: 'ecommerce', label: 'E-commerce' },
+    ],
+    allProjects: [
+      { id:1,  title:'Novu — SaaS Dashboard',  category:'saas',      categoryLabel:'SaaS',         tags:['SaaS','Figma','Tailwind'],           year:'2025', desc:'Complete redesign of a B2B notification platform. Reduced cognitive load by 40% and improved trial-to-paid conversion.',    img:'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80',  url:'case-study.html' },
+      { id:2,  title:'Finlo — Fintech App',    category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Fintech','Alpine.js'], year:'2024', desc:'Marketing site and onboarding flow for a personal finance app targeting young professionals.',                              img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80', url:'case-study.html' },
+      { id:3,  title:'Orea — Creative Agency', category:'agency',    categoryLabel:'Agency',       tags:['Agency','Animation'],                year:'2024', desc:'Bold editorial site for a Paris-based branding studio. Scroll-driven animations and custom cursor.',                      img:'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&q=80', url:'case-study.html' },
+      { id:4,  title:'Vesta — Real Estate',    category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Real Estate'],         year:'2024', desc:'Conversion-focused landing page for a proptech startup entering the French market.',                                      img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80',  url:'case-study.html' },
+      { id:5,  title:'Arkio — SaaS Analytics', category:'saas',      categoryLabel:'SaaS',         tags:['SaaS','Dashboard','Figma'],           year:'2024', desc:'Data visualisation dashboard for a B2B analytics platform. Designed for clarity at high data density.',                img:'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=700&q=80', url:'case-study.html' },
+      { id:6,  title:'Bloom — E-commerce',     category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Shopify'],               year:'2023', desc:'Custom Shopify theme for a sustainable cosmetics brand. Mobile-first with high emphasis on product imagery.',           img:'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=700&q=80',  url:'case-study.html' },
+      { id:7,  title:'Mira — Health App',      category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Health','Tailwind'],   year:'2023', desc:'App landing page for a mental wellness startup. Warm, accessible design with strong social proof.',                    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80', url:'case-study.html' },
+      { id:8,  title:'Noto — Agency Rebrand',  category:'agency',    categoryLabel:'Agency',       tags:['Agency','Rebrand'],                  year:'2023', desc:'Full rebrand and website for a digital communications agency in Lyon.',                                                img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80', url:'case-study.html' },
+      { id:9,  title:'Kova — E-commerce',      category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Figma'],                year:'2023', desc:'Product page redesign and checkout optimisation for a DTC furniture brand. Reduced cart abandonment by 18%.',         img:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80',  url:'case-study.html' },
+    ],
+    get visibleCount() {
+      if (this.filter === 'all') return this.allProjects.length;
+      return this.allProjects.filter(p => p.category === this.filter).length;
+    },
 
     init() {
       // dark mode
