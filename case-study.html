@@ -14,12 +14,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Novu — SaaS Dashboard redesign case study by Eliott. How a full UX overhaul reduced cognitive load by 40% and improved trial-to-paid conversion."/>
-  <meta name="author" content="Eliott"/>
-  <meta property="og:title" content="Novu — SaaS Dashboard · Case Study by Eliott"/>
+  <meta name="description" content="Project case study by Ahmed Rashwan."/>
+  <meta name="author" content="Ahmed Rashwan"/>
   <meta property="og:type" content="article"/>
-  <title>Novu — SaaS Dashboard · Case Study — Eliott</title>
+  <title id="page-title">Case Study — Ahmed Rashwan</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="data/projects.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -85,12 +85,81 @@
     /* Step badge */
     .step-badge{width:2rem;height:2rem;min-width:2rem;border-radius:50%;background:#FF6B2B;color:#fff;font-family:'PT Sans',sans-serif;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;}
 
+    /* Gallery / carousel */
+    .cs-gallery{position:relative;}
+    .cs-gallery-viewport{overflow:hidden;border-radius:1.5rem;background:#e4e4e7;}
+    .cs-gallery-track{display:flex;transition:transform .35s cubic-bezier(.4,0,.2,1);}
+    .cs-gallery-slide{flex:0 0 100%;width:100%;aspect-ratio:16/10;background:#e4e4e7;}
+    .cs-gallery-hero .cs-gallery-viewport{border-radius:1.5rem;}
+    .cs-gallery-hero .cs-gallery-slide{aspect-ratio:auto;height:18rem;}
+    @media(min-width:768px){.cs-gallery-hero .cs-gallery-slide{height:480px;}}
+    .cs-gallery-slide img,.cs-gallery-slide video{width:100%;height:100%;object-fit:cover;display:block;}
+    .cs-gallery-slide img{cursor:zoom-in;}
+    .prose-cs .photo-frame img{cursor:zoom-in;}
+    .cs-gallery-arrow{position:absolute;top:50%;translate:0 -50%;width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(255,255,255,.9);color:#18181b;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.15);cursor:pointer;border:none;transition:background .2s,transform .2s;z-index:2;}
+    .dark .cs-gallery-arrow{background:rgba(24,24,27,.85);color:#fff;}
+    .cs-gallery-arrow:hover{background:#FF6B2B;color:#fff;}
+    .cs-gallery-arrow:active{transform:translateY(-50%) scale(.92);}
+    .cs-gallery-prev{left:.75rem;}
+    .cs-gallery-next{right:.75rem;}
+    .cs-gallery-arrow[disabled]{opacity:.35;cursor:default;pointer-events:none;}
+    .cs-gallery-dots{display:flex;justify-content:center;gap:.4rem;margin-top:.85rem;flex-wrap:wrap;}
+    .cs-gallery-dot{width:.45rem;height:.45rem;border-radius:50%;background:#d4d4d8;border:none;padding:0;cursor:pointer;transition:background .2s,transform .2s;}
+    .dark .cs-gallery-dot{background:#3f3f46;}
+    .cs-gallery-dot.active{background:#FF6B2B;transform:scale(1.3);}
+    .cs-gallery-counter{position:absolute;top:.75rem;right:.75rem;background:rgba(0,0,0,.55);color:#fff;font-size:.7rem;padding:.2rem .55rem;border-radius:999px;z-index:2;}
+
+    /* Lightbox */
+    .cs-lightbox{position:fixed;inset:0;background:rgba(9,9,11,.94);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s ease;overflow:hidden;}
+    .cs-lightbox.open{opacity:1;pointer-events:auto;}
+    .cs-lightbox-frame{max-width:92vw;max-height:88vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+    .cs-lightbox-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:.5rem;box-shadow:0 10px 60px rgba(0,0,0,.5);cursor:zoom-in;transition:transform .15s ease;touch-action:none;user-select:none;}
+    .cs-lightbox-img.zoomed{cursor:zoom-out;transition:none;}
+    .cs-lightbox-img.zoomed.dragging{cursor:grabbing;}
+    .cs-lightbox-close{position:absolute;top:1.25rem;right:1.25rem;width:2.75rem;height:2.75rem;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;z-index:3;}
+    .cs-lightbox-close:hover{background:rgba(255,255,255,.2);}
+    .cs-lightbox-arrow{position:absolute;top:50%;translate:0 -50%;width:3rem;height:3rem;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;z-index:3;}
+    .cs-lightbox-arrow:hover{background:rgba(255,255,255,.2);}
+    .cs-lightbox-arrow[disabled]{opacity:.3;cursor:default;pointer-events:none;}
+    .cs-lightbox-prev{left:1rem;}
+    .cs-lightbox-next{right:1rem;}
+    .cs-lightbox-counter{position:absolute;bottom:1.25rem;left:50%;translate:-50% 0;color:#e4e4e7;font-size:.8rem;background:rgba(255,255,255,.1);padding:.3rem .8rem;border-radius:999px;z-index:3;}
+    .cs-lightbox-zoom{position:absolute;bottom:1.25rem;right:1.25rem;display:flex;gap:.4rem;z-index:3;}
+    .cs-lightbox-zoom button{width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;font-size:1.1rem;line-height:1;}
+    .cs-lightbox-zoom button:hover{background:rgba(255,255,255,.2);}
+    .cs-lightbox-zoom button[disabled]{opacity:.3;cursor:default;pointer-events:none;}
+
     /* card hover */
     .card-h{transition:transform .28s cubic-bezier(.4,0,.2,1),border-color .18s;}
     .card-h:hover{transform:translateY(-4px);}
   </style>
 </head>
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
+
+  <!-- Lightbox (shared by all galleries / images on this page) -->
+  <div id="cs-lightbox" class="cs-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button type="button" class="cs-lightbox-close" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <button type="button" class="cs-lightbox-arrow cs-lightbox-prev" aria-label="Previous">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <div class="cs-lightbox-frame">
+      <img class="cs-lightbox-img" src="" alt=""/>
+    </div>
+    <button type="button" class="cs-lightbox-arrow cs-lightbox-next" aria-label="Next">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <span class="cs-lightbox-counter" id="cs-lightbox-counter"></span>
+    <div class="cs-lightbox-zoom">
+      <button type="button" class="cs-lightbox-zoom-out" aria-label="Zoom out">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 8v0M8 11h6M11 5a6 6 0 100 12 6 6 0 000-12z"/></svg>
+      </button>
+      <button type="button" class="cs-lightbox-zoom-in" aria-label="Zoom in">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 8v6M8 11h6M11 5a6 6 0 100 12 6 6 0 000-12z"/></svg>
+      </button>
+    </div>
+  </div>
 
   <!-- Reading progress bar -->
   <div class="progress-bar" :style="`width:${progress}%`" role="progressbar" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100" aria-label="Reading progress"></div>
@@ -144,256 +213,48 @@
       <header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
 
         <!-- Back link -->
-        <a href="projects.html" class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
+        <a href="index.html#work" class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
           Back to projects
         </a>
 
         <!-- Tags + date -->
-        <div class="flex flex-wrap items-center gap-3 mb-6">
-          <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">SaaS</span>
-          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Figma</span>
-          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Tailwind</span>
-          <span class="text-xs text-zinc-400 ml-1">2025 · 6 weeks</span>
-        </div>
+        <div id="cs-tags" class="flex flex-wrap items-center gap-3 mb-6"></div>
 
-        <h1 class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6">
-          Novu — SaaS Dashboard Redesign
-        </h1>
+        <h1 id="cs-title" class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6"></h1>
 
-        <p class="reveal d1 text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl">
-          A complete UX and UI overhaul of a B2B notification management platform — reducing cognitive load, streamlining the core workflow, and converting more trial users into paying customers.
-        </p>
+        <p id="cs-subtitle" class="reveal d1 text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl"></p>
 
         <!-- Meta row -->
         <div class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-zinc-100 dark:border-zinc-900">
           <div>
             <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Client</p>
-            <p class="font-medium text-zinc-900 dark:text-white text-sm">Novu Inc.</p>
+            <p id="cs-client" class="font-medium text-zinc-900 dark:text-white text-sm">—</p>
           </div>
           <div>
             <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Role</p>
-            <p class="font-medium text-zinc-900 dark:text-white text-sm">Lead UI/UX Designer</p>
+            <p id="cs-role" class="font-medium text-zinc-900 dark:text-white text-sm">—</p>
           </div>
           <div>
             <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Timeline</p>
-            <p class="font-medium text-zinc-900 dark:text-white text-sm">Jan – Feb 2025</p>
+            <p id="cs-timeline" class="font-medium text-zinc-900 dark:text-white text-sm">—</p>
           </div>
           <div>
             <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Deliverables</p>
-            <p class="font-medium text-zinc-900 dark:text-white text-sm">Figma, HTML/CSS</p>
+            <p id="cs-deliverables" class="font-medium text-zinc-900 dark:text-white text-sm">—</p>
           </div>
         </div>
       </header>
 
-      <!-- ═══ HERO IMAGE ═══ -->
-      <div class="max-w-6xl mx-auto px-6 mb-16">
-        <div class="reveal photo-frame w-full h-72 md:h-[480px] rounded-3xl">
-          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1400&q=80" alt="Novu — SaaS Dashboard redesign hero" loading="eager"/>
-        </div>
-      </div>
+      <!-- ═══ HERO GALLERY ═══ -->
+      <div id="cs-hero-gallery" class="max-w-6xl mx-auto px-6 mb-16"></div>
 
       <!-- ═══ RESULTS BANNER ═══ -->
-      <div class="max-w-4xl mx-auto px-6 mb-16">
-        <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
-            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">−40%</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Cognitive load (SUS score)</p>
-          </div>
-          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
-            <p class="font-display font-bold text-3xl text-accent">+27%</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Trial-to-paid conversion</p>
-          </div>
-          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
-            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">−35%</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Support tickets (onboarding)</p>
-          </div>
-          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
-            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">4.8/5</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Post-launch NPS</p>
-          </div>
-        </div>
-      </div>
+      <div id="cs-stats" class="max-w-4xl mx-auto px-6 mb-16"></div>
 
-      <!-- ═══ ARTICLE BODY ═══ -->
-      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+      <!-- ═══ ARTICLE BODY (rendered from data/projects.js) ═══ -->
+      <div id="cs-content"></div>
 
-        <h2>The brief</h2>
-        <p>Novu is a B2B notification infrastructure platform — it lets developers route, manage, and monitor notifications across email, SMS, push, and in-app channels. The product was technically solid, but the dashboard had grown organically over two years without a coherent design strategy. By early 2025, the team were seeing high churn in the 14-day trial window and receiving consistent feedback that the platform was "powerful but overwhelming."</p>
-        <p>My mandate was simple: fix the first-hour experience without rebuilding the product from scratch. The budget was fixed and the engineering team had six weeks to ship.</p>
-
-        <blockquote>
-          <p>"We're losing users in the first 20 minutes. They sign up, see the dashboard, and just bounce. The product does exactly what they need — they just can't find it."</p>
-        </blockquote>
-
-        <h2>Discovery & research</h2>
-        <h3>User interviews</h3>
-        <p>I ran 9 user interviews with a mix of current paying customers and recently churned trial users. The sessions were 45-minute moderated usability tests combined with post-task interviews. Key findings:</p>
-        <ul>
-          <li>7 of 9 users couldn't locate the "Workflows" section without help during their first session</li>
-          <li>The notification log and the analytics panel were confused for one another by 5 users</li>
-          <li>The sidebar had 14 top-level navigation items — users reported feeling "unsure where to start"</li>
-          <li>Trial users specifically wanted a "get your first notification live" path, not a feature overview</li>
-        </ul>
-
-        <h3>Heuristic audit</h3>
-        <p>I ran a full Nielsen heuristic evaluation of the existing interface and identified 23 violations across 6 categories. The most critical were around visibility of system status, recognition over recall, and error prevention in the workflow builder.</p>
-
-      </div>
-
-      <!-- Full-width image -->
-      <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=1200&q=80" alt="Existing dashboard audit — heuristic violations mapped" loading="lazy"/>
-        </div>
-        <p class="img-caption">Existing dashboard with heuristic violations annotated during the audit phase.</p>
-      </div>
-
-      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
-
-        <h2>Design strategy</h2>
-        <p>Based on the research, I built the redesign around three principles:</p>
-
-      </div>
-
-      <!-- 3-column principles -->
-      <div class="max-w-5xl mx-auto px-6 mb-12">
-        <div class="reveal grid md:grid-cols-3 gap-5">
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Progressive disclosure</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Show only what's needed for the current task. Advanced features revealed on demand, not upfront.</p>
-          </div>
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-            </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Opinionated navigation</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Reduce the sidebar to 6 core items. Group secondary actions in context panels rather than global nav.</p>
-          </div>
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-            </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Goal-first onboarding</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Replace the feature tour with a 3-step "send your first notification" flow that delivers an aha-moment in under 5 minutes.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
-
-        <h2>Process</h2>
-        <h3>Week 1–2 · Information architecture</h3>
-        <p>I ran a card sorting exercise with 12 participants to rebuild the navigation taxonomy from scratch. The 14-item sidebar collapsed to 6 primary destinations. I then produced low-fidelity wireframes in Figma for the 8 most-visited screens, running rapid async reviews with the product team using Loom walkthroughs.</p>
-
-      </div>
-
-      <!-- Process steps -->
-      <div class="max-w-4xl mx-auto px-6 mb-12">
-        <div class="reveal space-y-4">
-          <!-- Step -->
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">1</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Card sorting + IA rebuild</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Remote card sort with 12 participants via Optimal Workshop. 14 nav items → 6 clear destinations with zero ambiguous groupings.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">2</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Lo-fi wireframes & async review</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">8 key screens sketched in Figma wireframe mode. Async review via Loom with the product team — 3 iteration rounds over 4 days.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">3</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Hi-fi design & component library</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Full Figma component library built on Auto Layout. 40+ components covering all states (empty, loading, error). Dark mode tokens included.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">4</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Usability testing & iteration</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">5 moderated sessions on the hi-fi prototype. 2 significant UX issues surfaced and resolved before handoff. SUS score improved from 54 → 82.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">5</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Handoff & front-end support</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Zeroheight design doc + Tailwind CSS implementation of the new design tokens. Present during sprint to support the engineering team on edge cases.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Second full-width image -->
-      <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="High-fidelity Figma screens — new dashboard layout" loading="lazy"/>
-        </div>
-        <p class="img-caption">Final hi-fi screens showing the redesigned sidebar, dashboard home, and notification workflow builder.</p>
-      </div>
-
-      <!-- Before / After split -->
-      <div class="max-w-5xl mx-auto px-6 mb-12">
-        <div class="reveal grid md:grid-cols-2 gap-4">
-          <div>
-            <div class="photo-frame w-full h-52 rounded-2xl">
-              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=700&q=80" alt="Before — original dashboard" loading="lazy"/>
-            </div>
-            <p class="img-caption mt-2">Before — 14-item sidebar, no clear entry point</p>
-          </div>
-          <div>
-            <div class="photo-frame w-full h-52 rounded-2xl">
-              <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80" alt="After — redesigned dashboard" loading="lazy"/>
-            </div>
-            <p class="img-caption mt-2">After — 6-item sidebar, goal-first onboarding checklist</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="max-w-3xl mx-auto px-6 pb-16 prose-cs">
-
-        <h2>Key design decisions</h2>
-        <h3>Collapsing the sidebar</h3>
-        <p>The original sidebar mixed primary destinations with contextual actions and account settings indiscriminately. I applied a strict three-tier hierarchy: primary navigation (6 items, always visible), contextual actions (appear in a right panel when relevant), and account/settings (collapsed under an avatar menu). This alone reduced the cognitive entry cost significantly — users knew where they were and where they could go.</p>
-
-        <h3>The onboarding checklist</h3>
-        <p>Rather than a product tour, I designed a persistent but dismissible checklist embedded in the dashboard home. Three steps: connect a channel, create a workflow, send a test notification. Each step launches an inline mini-wizard that completes within the dashboard without breaking context. In the first month post-launch, 68% of trial users completed all three steps vs 21% previously.</p>
-
-        <h3>Empty states as teachers</h3>
-        <p>Every empty state in the old design was a blank panel. In the redesign, each empty state includes a one-sentence explanation of what the section does, a primary CTA, and a secondary link to documentation. This reduced support tickets specifically about feature discovery by 35%.</p>
-
-        <h2>Results</h2>
-        <p>The redesign shipped in week 6, exactly on schedule. Metrics were tracked over the following 6 weeks post-launch compared to the same prior period.</p>
-        <ul>
-          <li><strong>SUS (System Usability Scale) score:</strong> 54 → 82 (+28 points)</li>
-          <li><strong>Trial-to-paid conversion rate:</strong> +27%</li>
-          <li><strong>Onboarding completion (3-step flow):</strong> 21% → 68%</li>
-          <li><strong>Support tickets (onboarding-related):</strong> −35%</li>
-          <li><strong>Average time to first workflow created:</strong> 18 min → 4 min</li>
-          <li><strong>Post-launch NPS:</strong> 4.8/5</li>
-        </ul>
-
-        <blockquote>
-          <p>"Eliott completely changed how we think about our onboarding. The checklist alone added 6 figures to our ARR in the first quarter. Exceptionally thorough process and a pleasure to work with."</p>
-        </blockquote>
-
-        <h2>Reflections</h2>
-        <p>The biggest lesson from this project: most SaaS UX problems aren't about aesthetics, they're about information architecture. The product was capable — users just couldn't find the value fast enough. A focused IA overhaul delivered more measurable ROI than a visual rebrand ever could have.</p>
-        <p>If I were to do it again, I'd push harder for a longer discovery phase. Six weeks is tight for a full dashboard redesign, and we had to make some navigation decisions based on incomplete card-sort data. The results held up, but another round of testing before hi-fi would have given me more confidence on a few borderline calls.</p>
-
-        <hr/>
-        <p><em>Interested in a similar engagement? <a href="index.html#contact">Get in touch</a> — I'm available for new projects from Q2 2025.</em></p>
-
-      </div>
     </article>
 
     <!-- ═══ MORE PROJECTS ═══ -->
@@ -401,58 +262,11 @@
       <div class="max-w-6xl mx-auto px-6">
         <div class="flex items-center justify-between mb-8">
           <h2 class="font-display font-bold text-2xl text-zinc-900 dark:text-white">More projects</h2>
-          <a href="projects.html" class="text-sm font-medium text-accent nav-link hidden md:block">View all →</a>
+          <a href="index.html#work" class="text-sm font-medium text-accent nav-link hidden md:block">View all →</a>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
-
-          <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
-            <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Finlo — Fintech App" loading="lazy"/>
-            </div>
-            <div class="p-5">
-              <div class="flex gap-2 mb-2">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Landing page</span>
-              </div>
-              <a href="#">
-                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Finlo — Fintech App</h3>
-              </a>
-              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
-            </div>
-          </article>
-
-          <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
-            <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&q=80" alt="Orea — Creative Agency" loading="lazy"/>
-            </div>
-            <div class="p-5">
-              <div class="flex gap-2 mb-2">
-                <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Agency</span>
-              </div>
-              <a href="#">
-                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Orea — Creative Agency</h3>
-              </a>
-              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
-            </div>
-          </article>
-
-          <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
-            <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=700&q=80" alt="Bloom — E-commerce" loading="lazy"/>
-            </div>
-            <div class="p-5">
-              <div class="flex gap-2 mb-2">
-                <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">E-commerce</span>
-              </div>
-              <a href="#">
-                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Bloom — E-commerce</h3>
-              </a>
-              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
-            </div>
-          </article>
-
-        </div>
+        <div id="cs-more" class="grid md:grid-cols-3 gap-6"></div>
         <div class="text-center mt-8 md:hidden">
-          <a href="projects.html" class="text-sm font-medium text-accent">View all projects →</a>
+          <a href="index.html#work" class="text-sm font-medium text-accent">View all projects →</a>
         </div>
       </div>
     </section>
@@ -485,15 +299,375 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('yr') && (document.getElementById('yr').textContent = new Date().getFullYear());
 
-    // Reveal on scroll
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = s == null ? '' : String(s);
+      return d.innerHTML;
+    }
+
+    let galleryCount = 0;
+
+    function renderContentBlock(block, project) {
+      switch (block.type) {
+        case 'heading':
+          return `<h2>${esc(block.text)}</h2>`;
+        case 'subheading':
+          return `<h3>${esc(block.text)}</h3>`;
+        case 'paragraph':
+          return `<p>${esc(block.text)}</p>`;
+        case 'quote':
+          return `<blockquote><p>${esc(block.text)}</p></blockquote>`;
+        case 'list':
+          return `<ul>${block.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`;
+        case 'divider':
+          return `<hr/>`;
+        case 'image':
+          return `<div class="max-w-5xl mx-auto px-6 mb-4 -mx-6 md:mx-auto">
+            <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
+              <img class="cs-zoomable" src="${esc(block.src)}" alt="${esc(block.alt || '')}" loading="lazy"/>
+            </div>
+            ${block.caption ? `<p class="img-caption">${esc(block.caption)}</p>` : ''}
+          </div>`;
+        case 'principles':
+          return `<div class="max-w-5xl mx-auto px-6 mb-12 -mx-6 md:mx-auto">
+            <div class="reveal grid md:grid-cols-3 gap-5">
+              ${block.items.map(it => `
+                <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
+                  <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">${esc(it.title)}</h3>
+                  <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">${esc(it.desc)}</p>
+                </div>`).join('')}
+            </div>
+          </div>`;
+        case 'steps':
+          return `<div class="max-w-4xl mx-auto px-6 mb-12 -mx-6 md:mx-auto">
+            <div class="reveal space-y-4">
+              ${block.items.map((it, idx) => `
+                <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+                  <div class="step-badge shrink-0 mt-0.5">${idx + 1}</div>
+                  <div>
+                    <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">${esc(it.title)}</p>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">${esc(it.desc)}</p>
+                  </div>
+                </div>`).join('')}
+            </div>
+          </div>`;
+        case 'gallery': {
+          const items = (block.items && block.items.length) ? block.items : (project && project.images) || [];
+          if (!items.length) return '';
+          const gid = `cs-gal-${galleryCount++}`;
+          const slides = items.map(it => it.type === 'video'
+            ? `<div class="cs-gallery-slide"><video src="${esc(it.src)}" ${it.poster ? `poster="${esc(it.poster)}"` : ''} controls playsinline preload="metadata"></video></div>`
+            : `<div class="cs-gallery-slide"><img src="${esc(it.src)}" alt="${esc(it.alt || block.caption || '')}" loading="lazy"/></div>`
+          ).join('');
+          const dots = items.map((_, i) => `<button class="cs-gallery-dot${i === 0 ? ' active' : ''}" data-goto="${i}" aria-label="Go to slide ${i + 1}"></button>`).join('');
+          const isHero = block.variant === 'hero';
+          return `<div class="${isHero ? '' : 'max-w-5xl mx-auto px-6 mb-4 -mx-6 md:mx-auto'}">
+            <div class="reveal cs-gallery${isHero ? ' cs-gallery-hero' : ''}" id="${gid}" data-count="${items.length}">
+              <div class="cs-gallery-viewport">
+                <div class="cs-gallery-track">${slides}</div>
+                <span class="cs-gallery-counter">1 / ${items.length}</span>
+              </div>
+              <button type="button" class="cs-gallery-arrow cs-gallery-prev" aria-label="Previous">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button type="button" class="cs-gallery-arrow cs-gallery-next" aria-label="Next">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+              <div class="cs-gallery-dots">${dots}</div>
+            </div>
+            ${block.caption ? `<p class="img-caption">${esc(block.caption)}</p>` : ''}
+          </div>`;
+        }
+        case 'compare':
+          return `<div class="max-w-5xl mx-auto px-6 mb-12 -mx-6 md:mx-auto">
+            <div class="reveal grid md:grid-cols-2 gap-4">
+              <div>
+                <div class="photo-frame w-full h-52 rounded-2xl"><img src="${esc(block.before.src)}" alt="${esc(block.before.caption || 'Before')}" loading="lazy"/></div>
+                <p class="img-caption mt-2">${esc(block.before.caption || '')}</p>
+              </div>
+              <div>
+                <div class="photo-frame w-full h-52 rounded-2xl"><img src="${esc(block.after.src)}" alt="${esc(block.after.caption || 'After')}" loading="lazy"/></div>
+                <p class="img-caption mt-2">${esc(block.after.caption || '')}</p>
+              </div>
+            </div>
+          </div>`;
+        default:
+          return '';
+      }
+    }
+
+    function render() {
+      const projects = window.PROJECTS || [];
+      const params = new URLSearchParams(window.location.search);
+      const id = Number(params.get('id'));
+      const project = projects.find(p => p.id === id) || projects[0];
+
+      if (!project) {
+        document.getElementById('cs-content').innerHTML = '<p class="max-w-3xl mx-auto px-6 py-16 text-center text-zinc-500">Project not found.</p>';
+        return;
+      }
+
+      const cs = project.caseStudy || {};
+
+      document.title = `${project.title} · Case Study — Ahmed Rashwan`;
+      document.getElementById('cs-title').textContent = project.title;
+      document.getElementById('cs-subtitle').textContent = cs.subtitle || project.desc;
+
+      document.getElementById('cs-tags').innerHTML =
+        (project.tags || []).map((t, i) => `<span class="text-xs ${i === 0 ? 'bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'} px-2.5 py-1 rounded-full">${esc(t)}</span>`).join('')
+        + `<span class="text-xs text-zinc-400 ml-1">${esc(project.year || '')}</span>`;
+
+      document.getElementById('cs-client').textContent = cs.client || project.title;
+      document.getElementById('cs-role').textContent = cs.role || 'Developer';
+      document.getElementById('cs-timeline').textContent = cs.timeline || project.year || '—';
+      document.getElementById('cs-deliverables').textContent = cs.deliverables || (project.tags || []).join(', ');
+
+      document.getElementById('cs-hero-gallery').innerHTML =
+        renderContentBlock({ type: 'gallery', variant: 'hero' }, project)
+        || `<div class="reveal photo-frame w-full h-72 md:h-[480px] rounded-3xl"><img src="${esc(cs.heroImg || project.img)}" alt="${esc(project.title)}" loading="eager"/></div>`;
+
+      document.getElementById('cs-stats').innerHTML = (cs.stats && cs.stats.length)
+        ? `<div class="reveal grid grid-cols-2 md:grid-cols-${Math.min(cs.stats.length, 4)} gap-4">
+            ${cs.stats.map((s, i) => `
+              <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+                <p class="font-display font-bold text-3xl ${i === 1 ? 'text-accent' : 'text-zinc-900 dark:text-white'}">${esc(s.value)}</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">${esc(s.label)}</p>
+              </div>`).join('')}
+          </div>`
+        : '';
+
+      const content = (cs.content && cs.content.length) ? cs.content : [
+        { type: 'heading', text: 'About this project' },
+        { type: 'paragraph', text: project.desc },
+      ];
+
+      document.getElementById('cs-content').innerHTML =
+        `<div class="max-w-3xl mx-auto px-6 pb-16 prose-cs">${content.map(b => renderContentBlock(b, project)).join('')}</div>`;
+
+      const more = projects.filter(p => p.id !== project.id).slice(0, 3);
+      document.getElementById('cs-more').innerHTML = more.map(p => `
+        <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+          <a href="case-study.html?id=${p.id}" class="block photo-frame w-full h-44">
+            <img src="${esc(p.img)}" alt="${esc(p.title)}" loading="lazy"/>
+          </a>
+          <div class="p-5">
+            <div class="flex gap-2 mb-2">
+              <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">${esc(p.categoryLabel || p.category)}</span>
+            </div>
+            <a href="case-study.html?id=${p.id}">
+              <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">${esc(p.title)}</h3>
+            </a>
+            <a href="case-study.html?id=${p.id}" class="text-sm font-medium text-accent nav-link">View project →</a>
+          </div>
+        </article>`).join('');
+
+      // Reveal on scroll (re-run for freshly injected nodes)
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+      initGalleries();
+    }
+
+    function initGalleries() {
+      document.querySelectorAll('.cs-gallery').forEach(gallery => {
+        const count = Number(gallery.dataset.count || 0);
+        if (!count) return;
+        const track = gallery.querySelector('.cs-gallery-track');
+        const prev = gallery.querySelector('.cs-gallery-prev');
+        const next = gallery.querySelector('.cs-gallery-next');
+        const dots = [...gallery.querySelectorAll('.cs-gallery-dot')];
+        const counter = gallery.querySelector('.cs-gallery-counter');
+        let index = 0;
+
+        function update() {
+          track.style.transform = `translateX(-${index * 100}%)`;
+          dots.forEach((d, i) => d.classList.toggle('active', i === index));
+          if (counter) counter.textContent = `${index + 1} / ${count}`;
+          prev.disabled = index === 0;
+          next.disabled = index === count - 1;
+          // pause any playing video when it scrolls out of view
+          gallery.querySelectorAll('video').forEach((v, i) => { if (i !== index) v.pause(); });
+        }
+
+        prev.addEventListener('click', () => { if (index > 0) { index--; update(); } });
+        next.addEventListener('click', () => { if (index < count - 1) { index++; update(); } });
+        dots.forEach(d => d.addEventListener('click', () => { index = Number(d.dataset.goto); update(); }));
+
+        // swipe support
+        let startX = null;
+        const viewport = gallery.querySelector('.cs-gallery-viewport');
+        viewport.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+        viewport.addEventListener('touchend', e => {
+          if (startX === null) return;
+          const dx = e.changedTouches[0].clientX - startX;
+          if (dx > 40 && index > 0) { index--; update(); }
+          else if (dx < -40 && index < count - 1) { index++; update(); }
+          startX = null;
+        }, { passive: true });
+
+        // click an image slide → open it full-size, keeping this gallery's own images to browse
+        const galleryImages = [...gallery.querySelectorAll('.cs-gallery-slide img')].map(img => ({ src: img.src, alt: img.alt }));
+        gallery.querySelectorAll('.cs-gallery-slide img').forEach((img, i) => {
+          img.addEventListener('click', () => openLightbox(galleryImages, i));
+        });
+
+        update();
       });
-    }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+      // standalone images marked as zoomable (e.g. full-width case-study images)
+      document.querySelectorAll('.cs-zoomable').forEach(img => {
+        img.addEventListener('click', () => openLightbox([{ src: img.src, alt: img.alt }], 0));
+      });
+    }
+
+    // ── Lightbox ──────────────────────────────────────────────────────────
+    let lbImages = [];
+    let lbIndex = 0;
+    const lightbox = document.getElementById('cs-lightbox');
+    const lbImg = lightbox.querySelector('.cs-lightbox-img');
+    const lbCounter = document.getElementById('cs-lightbox-counter');
+    const lbPrev = lightbox.querySelector('.cs-lightbox-prev');
+    const lbNext = lightbox.querySelector('.cs-lightbox-next');
+    const lbZoomIn = lightbox.querySelector('.cs-lightbox-zoom-in');
+    const lbZoomOut = lightbox.querySelector('.cs-lightbox-zoom-out');
+
+    const ZOOM_MIN = 1, ZOOM_MAX = 4, ZOOM_STEP = 1;
+    let scale = 1, panX = 0, panY = 0;
+
+    function applyTransform() {
+      lbImg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+      lbImg.classList.toggle('zoomed', scale > 1);
+      lbZoomOut.disabled = scale <= ZOOM_MIN;
+      lbZoomIn.disabled = scale >= ZOOM_MAX;
+    }
+
+    function resetZoom() {
+      scale = 1; panX = 0; panY = 0;
+      applyTransform();
+    }
+
+    // zoom while keeping the point under (originX, originY) — viewport coords — visually fixed
+    function setZoom(newScale, originX, originY) {
+      newScale = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, newScale));
+      if (originX == null) {
+        const r = lbImg.getBoundingClientRect();
+        originX = r.left + r.width / 2;
+        originY = r.top + r.height / 2;
+      }
+      const r = lbImg.getBoundingClientRect();
+      const cx = originX - (r.left + r.width / 2);
+      const cy = originY - (r.top + r.height / 2);
+      const ratio = newScale / scale;
+      panX = panX + cx - cx * ratio;
+      panY = panY + cy - cy * ratio;
+      scale = newScale;
+      if (scale === ZOOM_MIN) { panX = 0; panY = 0; }
+      applyTransform();
+    }
+
+    function openLightbox(images, index) {
+      lbImages = images;
+      lbIndex = index;
+      resetZoom();
+      updateLightbox();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function goTo(i) {
+      lbIndex = i;
+      resetZoom();
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const item = lbImages[lbIndex];
+      lbImg.src = item.src;
+      lbImg.alt = item.alt || '';
+      const multi = lbImages.length > 1;
+      lbCounter.textContent = multi ? `${lbIndex + 1} / ${lbImages.length}` : '';
+      lbCounter.style.display = multi ? '' : 'none';
+      lbPrev.style.display = multi ? '' : 'none';
+      lbNext.style.display = multi ? '' : 'none';
+      lbPrev.disabled = lbIndex === 0;
+      lbNext.disabled = lbIndex === lbImages.length - 1;
+    }
+
+    lightbox.querySelector('.cs-lightbox-close').addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => { if (lbIndex > 0) goTo(lbIndex - 1); });
+    lbNext.addEventListener('click', () => { if (lbIndex < lbImages.length - 1) goTo(lbIndex + 1); });
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    lbZoomIn.addEventListener('click', () => setZoom(scale + ZOOM_STEP));
+    lbZoomOut.addEventListener('click', () => setZoom(scale - ZOOM_STEP));
+
+    // click image: zoom in toward click point, or back out if already zoomed
+    lbImg.addEventListener('click', e => {
+      e.stopPropagation();
+      if (scale > 1) setZoom(1);
+      else setZoom(2.5, e.clientX, e.clientY);
+    });
+
+    // scroll wheel: zoom toward cursor
+    lightbox.addEventListener('wheel', e => {
+      if (!lightbox.classList.contains('open')) return;
+      e.preventDefault();
+      setZoom(scale + (e.deltaY < 0 ? 0.4 : -0.4), e.clientX, e.clientY);
+    }, { passive: false });
+
+    // Mouse: once zoomed, just move the cursor over the image to pan — no click-drag needed.
+    const lbFrame = lightbox.querySelector('.cs-lightbox-frame');
+    lbImg.addEventListener('pointermove', e => {
+      if (e.pointerType === 'touch' || scale <= 1) return;
+      const rect = lbFrame.getBoundingClientRect();
+      const percentX = (e.clientX - rect.left) / rect.width;
+      const percentY = (e.clientY - rect.top) / rect.height;
+      panX = (0.5 - percentX) * rect.width * (scale - 1);
+      panY = (0.5 - percentY) * rect.height * (scale - 1);
+      applyTransform();
+    });
+
+    // Touch: drag with a finger to pan when zoomed.
+    let dragging = false, dragStartX = 0, dragStartY = 0, panStartX = 0, panStartY = 0;
+    lbImg.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'touch' || scale <= 1) return;
+      dragging = true;
+      lbImg.classList.add('dragging');
+      dragStartX = e.clientX; dragStartY = e.clientY;
+      panStartX = panX; panStartY = panY;
+      lbImg.setPointerCapture(e.pointerId);
+    });
+    lbImg.addEventListener('pointermove', e => {
+      if (!dragging || e.pointerType !== 'touch') return;
+      panX = panStartX + (e.clientX - dragStartX);
+      panY = panStartY + (e.clientY - dragStartY);
+      applyTransform();
+    });
+    ['pointerup', 'pointercancel'].forEach(ev => lbImg.addEventListener(ev, () => {
+      dragging = false;
+      lbImg.classList.remove('dragging');
+    }));
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft' && scale === 1 && lbIndex > 0) goTo(lbIndex - 1);
+      else if (e.key === 'ArrowRight' && scale === 1 && lbIndex < lbImages.length - 1) goTo(lbIndex + 1);
+      else if (e.key === '+' || e.key === '=') setZoom(scale + ZOOM_STEP);
+      else if (e.key === '-') setZoom(scale - ZOOM_STEP);
+    });
+
+    render();
   </script>
 
 </body>
