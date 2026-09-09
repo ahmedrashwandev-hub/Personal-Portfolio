@@ -96,13 +96,21 @@
     .cs-gallery-slide img,.cs-gallery-slide video{width:100%;height:100%;object-fit:cover;display:block;}
     .cs-gallery-slide img{cursor:zoom-in;}
     .prose-cs .photo-frame img{cursor:zoom-in;}
-    .cs-gallery-arrow{position:absolute;top:50%;translate:0 -50%;width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(255,255,255,.9);color:#18181b;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.15);cursor:pointer;border:none;transition:background .2s,transform .2s;z-index:2;}
+    .cs-gallery-arrow{position:absolute;top:50%;translate:0 -50%;width:2.75rem;height:2.75rem;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border-radius:50%;background:rgba(255,255,255,.9);color:#18181b;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.15);cursor:pointer;border:none;transition:background .2s,transform .2s;z-index:2;}
     .dark .cs-gallery-arrow{background:rgba(24,24,27,.85);color:#fff;}
     .cs-gallery-arrow:hover{background:#FF6B2B;color:#fff;}
-    .cs-gallery-arrow:active{transform:translateY(-50%) scale(.92);}
+    .cs-gallery-arrow > svg{pointer-events:none;}
+    .cs-gallery-arrow:active{scale:.92;}
     .cs-gallery-prev{left:.75rem;}
     .cs-gallery-next{right:.75rem;}
     .cs-gallery-arrow[disabled]{opacity:.35;cursor:default;pointer-events:none;}
+    .cs-gallery-video{position:relative;width:100%;height:100%;}
+    .cs-gallery-play{position:absolute;inset:0;margin:auto;width:5rem;height:5rem;border-radius:50%;border:none;padding:0;background:rgba(255,107,43,.92);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.35);transition:background .2s,scale .2s,opacity .2s;z-index:2;-webkit-tap-highlight-color:transparent;}
+    @media(min-width:768px){.cs-gallery-play{width:6rem;height:6rem;}}
+    .cs-gallery-play:hover{background:#FF6B2B;scale:1.06;}
+    .cs-gallery-play svg{width:2.25rem;height:2.25rem;}
+    @media(min-width:768px){.cs-gallery-play svg{width:2.75rem;height:2.75rem;}}
+    .cs-gallery-video.playing .cs-gallery-play{opacity:0;pointer-events:none;}
     .cs-gallery-dots{display:flex;justify-content:center;gap:.4rem;margin-top:.85rem;flex-wrap:wrap;}
     .cs-gallery-dot{width:.45rem;height:.45rem;border-radius:50%;background:#d4d4d8;border:none;padding:0;cursor:pointer;transition:background .2s,transform .2s;}
     .dark .cs-gallery-dot{background:#3f3f46;}
@@ -358,7 +366,7 @@
           if (!items.length) return '';
           const gid = `cs-gal-${galleryCount++}`;
           const slides = items.map(it => it.type === 'video'
-            ? `<div class="cs-gallery-slide"><video src="${esc(it.src)}" ${it.poster ? `poster="${esc(it.poster)}"` : ''} controls playsinline preload="metadata"></video></div>`
+            ? `<div class="cs-gallery-slide"><div class="cs-gallery-video"><video src="${esc(it.src)}" ${it.poster ? `poster="${esc(it.poster)}"` : ''} controls playsinline preload="metadata"></video><button type="button" class="cs-gallery-play" aria-label="Play video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1.8 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 001.52.85l11.14-6.86a1 1 0 000-1.7L9.52 4.29A1 1 0 008 5.14z"/></svg></button></div></div>`
             : `<div class="cs-gallery-slide"><img src="${esc(it.src)}" alt="${esc(it.alt || block.caption || '')}" loading="lazy"/></div>`
           ).join('');
           const dots = items.map((_, i) => `<button class="cs-gallery-dot${i === 0 ? ' active' : ''}" data-goto="${i}" aria-label="Go to slide ${i + 1}"></button>`).join('');
@@ -510,6 +518,17 @@
           else if (dx < -40 && index < count - 1) { index++; update(); }
           startX = null;
         }, { passive: true });
+
+        // big centered play button on video slides
+        gallery.querySelectorAll('.cs-gallery-video').forEach(wrap => {
+          const video = wrap.querySelector('video');
+          const playBtn = wrap.querySelector('.cs-gallery-play');
+          if (!video || !playBtn) return;
+          playBtn.addEventListener('click', () => video.play());
+          video.addEventListener('play', () => wrap.classList.add('playing'));
+          video.addEventListener('pause', () => wrap.classList.remove('playing'));
+          video.addEventListener('ended', () => wrap.classList.remove('playing'));
+        });
 
         // click an image slide → open it full-size, keeping this gallery's own images to browse
         const galleryImages = [...gallery.querySelectorAll('.cs-gallery-slide img')].map(img => ({ src: img.src, alt: img.alt }));

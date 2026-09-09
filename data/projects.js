@@ -32,7 +32,7 @@ window.PROJECTS = [
   {
     id: 1,
     title: 'XApps — Corporate Website',
-    category: 'WordPress',
+    category: 'wordpress',
     categoryLabel: 'WordPress',
     tags: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript'],
     year: '2026',
@@ -40,9 +40,21 @@ window.PROJECTS = [
     // This project's photos/videos — used for the card thumbnail, the case-study
     // hero image, and the gallery block below. Add/remove items here only.
     images: [
-      { type: 'image', src: 'photo/XApps.png', alt: 'XApps homepage' },
-      // { type: 'video', src: 'photo/xapps-demo.mp4', poster: 'photo/xapps-poster.jpg' }, // put first to show it first
-      { type: 'image', src: 'photo/XApps1.png', alt: 'Blog page' },
+      { type: 'video', src: 'photo/XApps/XApps.mp4', poster: 'photo/XApps/XApps1.png' },
+      { type: 'image', src: 'photo/XApps/XApps2.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps3.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps4.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps5.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps6.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps7.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps8.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps9.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps10.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps11.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps12.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps13.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/XApps/XApps14.png', alt: 'Blog page' },
+
       // { type: 'image', src: 'photo/xapps-3.png', alt: 'Projects page' },
       // ...add up to ~30 items the same way, each pointing to a file in photo/
     ],
@@ -53,87 +65,93 @@ window.PROJECTS = [
       timeline: '2026',
       deliverables: 'WordPress, PHP, HTML/CSS, JS',
       stats: [
-        { value: '7', label: 'Site areas audited & fixed' },
+        { value: '7+', label: 'Website Areas Improved' },
         { value: '25+', label: 'Bugs & UI issues resolved' },
         { value: 'AR / EN', label: 'Bilingual QA (RTL / LTR)' },
       ],
       content: [
-        { type: 'heading', text: 'The brief' },
-        { type: 'paragraph', text: 'Client sent a page-by-page QA list of layout bugs and broken features on their bilingual (AR/EN) WordPress site. Task: fix every item, verify in both languages.' },
+        { type: 'heading', text: 'Project BriefWhat I worked on' },
+        { type: 'paragraph', text: 'The client provided a document with around 30 website issues. I fixed each issue one by one and tested everything on both the Arabic and English versions of the website.' },
 
-        { type: 'heading', text: 'Scope of work' },
+        { type: 'heading', text: 'What I worked on' },
 
         { type: 'subheading', text: 'Global' },
         { type: 'list', items: [
-          'Cairo font not loading on Arabic mobile — fixed',
+          'Improved the Arabic and English versions of the website.',
+          'Fixed general UI, typography, spacing, and alignment issues.',
+          'Improved consistency between the Arabic and English versions.',
         ] },
 
         { type: 'subheading', text: 'Homepage (AR/EN)' },
         { type: 'list', items: [
-          'Squared inconsistent blog thumbnails',
-          'Contact form sending no emails — debugged & fixed',
-          'Removed broken Google+ icon, re-centered social icons',
-          'Fixed footer text alignment',
-          'Removed white circles behind client/tech logos',
-          '"See more projects" CTA added, linked to Projects page',
+          'Fixed responsive and mobile layout issues across different screen sizes.',
+          'Improved Arabic RTL layout and applied the Cairo font across Arabic pages.',
+          'Improved the Projects section, including project images and navigation.',
+          'Improved Blog section images and layout.',
+          'Improved hover effects and clickable elements.',
         ] },
 
         { type: 'subheading', text: 'Contact info block' },
         { type: 'list', items: [
-          'Reordered Sales/Development/HR block, moved address line',
-          'Standardized email format across all departments',
+          'Improved the contact information layout and alignment.',
+          'Fixed the contact/email form functionality.',
+          'Improved the presentation of email addresses and social media links.',
         ] },
 
         { type: 'subheading', text: 'WordPress dashboard' },
         { type: 'list', items: [
-          'Scoped text-color option for editor toolbar',
-          'Fixed Projects post type — add/edit was broken',
+          'Improved WordPress Dashboard functionality for managing website content.',
+          'Fixed issues with adding and editing projects.',
+          'Improved project content management and editing.',
         ] },
 
         { type: 'subheading', text: 'Projects page (AR/EN)' },
         { type: 'list', items: [
-          'Fixed header nav links (mismatched vs. homepage)',
-          'Added RSS icon, linked AR/EN feeds',
-          'Related-projects list → responsive grid',
+          'Improved the Projects page layout in both languages.',
+          'Fixed project image display and sizing issues.',
+          'Improved project navigation and links.',
+          'Fixed differences between the Arabic and English versions.',
         ] },
 
         { type: 'subheading', text: 'Blog article page (AR/EN)' },
         { type: 'list', items: [
-          'Article H1: white → blue for readability',
-          'Redesigned share buttons',
-          'Removed boxed borders on tags/categories',
-          'Sidebar thumbnails fixed to 300×300px',
-          'Added spacing between title and thumbnail',
-          'Fixed missing page title on Arabic posts',
+          'Improved article titles, images, categories, tags, and spacing.',
+          'Fixed image sizing to display images correctly without unwanted cropping.',
+          'Improved the article layout and readability.',
+          'Fixed issues with article titles and page content in the Arabic version.',
         ] },
 
         { type: 'subheading', text: 'Blog category pages (AR/EN)' },
         { type: 'list', items: [
-          'Reduced title font size, fixed line spacing (EN)',
-          'Removed boxed borders on tags/categories',
-          'Thumbnails fixed to 300×300px',
-          'Added spacing between title and thumbnail',
+          'Improved article title sizes and spacing.',
+          'Fixed sidebar image sizing and display.',
+          'Improved categories, tags, and article layout.',
+          'Fixed image spacing and alignment issues.',
+          'Improved the overall blog browsing experience in both languages.',
         ] },
 
         { type: 'heading', text: 'Process' },
         { type: 'steps', items: [
-          { title: 'Triage', desc: 'Grouped the client\'s bug list by page and by cause: CSS, template, or backend.' },
-          { title: 'Fix front-end', desc: 'Layout, spacing, and image issues — checked on both AR (RTL) and EN (LTR).' },
-          { title: 'Fix backend', desc: 'Traced the contact form mail bug; restored the Projects post type.' },
-          { title: 'Verify on mobile', desc: 'Re-tested every fix on mobile, where several bugs only appeared.' },
+          { title: 'Review', desc: 'Reviewed the client\'s bug list and grouped the issues by website section.' },
+          { title: 'Fix', desc: 'Fixed the reported UI, responsive, image, and functionality issues one by one.' },
+          { title: 'Backend & WordPress', desc: 'Fixed the contact form and Projects management issues in WordPress.' },
+          { title: 'Test', desc: 'Tested every fix on both Arabic (RTL) and English (LTR) versions, including mobile.' },
         ] },
 
         { type: 'heading', text: 'Skills demonstrated' },
         { type: 'list', items: [
-          'WordPress theme customization (PHP/HTML/CSS/JS)',
-          'Bilingual RTL/LTR front-end debugging',
-          'Responsive/mobile CSS fixes',
-          'WordPress mail & custom post type debugging',
-          'Turning a client QA list into a tracked fix list',
+          'WordPress Development & Customization',
+          'PHP, HTML, CSS & JavaScript',
+          'Responsive & Mobile Design',
+          'Arabic RTL / English LTR Support',
+          'WordPress Debugging & Troubleshooting',
+          'UI, Layout & Image Optimization',
+          'WordPress Forms & Custom Post Types',
+          'Cross-browser & Mobile Testing',
         ] },
 
         { type: 'heading', text: 'Result' },
-        { type: 'paragraph', text: 'All QA items closed and verified in Arabic and English — from a site with visible layout breaks and a dead contact form to a consistent, working experience on desktop and mobile.' },
+        { type: 'paragraph', text: 'All reported issues were fixed and verified in both Arabic and English. The website now provides a more consistent and reliable experience across desktop and mobile.' },
       ],
     },
   },
@@ -151,7 +169,12 @@ window.PROJECTS = [
 // `images` array when they're not set explicitly, so each project only has
 // to list its media once, in `images`.
 window.PROJECTS.forEach(p => {
-  const firstSrc = p.images && p.images.length ? p.images[0].src : null;
+  // a video can't be a thumbnail — use its poster, or the first real image
+  const first = p.images && p.images.length ? p.images[0] : null;
+  const firstSrc = !first ? null
+    : first.type === 'video'
+      ? (first.poster || (p.images.find(i => i.type !== 'video') || {}).src || null)
+      : first.src;
   if (!p.img && firstSrc) p.img = firstSrc;
   if (p.caseStudy && !p.caseStudy.heroImg) p.caseStudy.heroImg = firstSrc || p.img;
 });
