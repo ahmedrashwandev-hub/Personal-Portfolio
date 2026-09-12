@@ -238,18 +238,18 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <template x-for="p in allProjects" :key="p.id">
         <div
-          x-show="filter === 'all' || p.category === filter"
+          x-show="filter === 'all' || (Array.isArray(p.category) ? p.category.includes(filter) : p.category === filter)"
           x-transition:enter="transition ease-out duration-300"
           x-transition:enter-start="opacity-0 scale-95 translate-y-2"
           x-transition:enter-end="opacity-100 scale-100 translate-y-0"
           x-transition:leave="transition ease-in duration-200"
           x-transition:leave-start="opacity-100 scale-100"
           x-transition:leave-end="opacity-0 scale-95">
-          <article class="card-h group h-full rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+          <article class="card-h group h-full flex flex-col rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
             <a :href="p.url" class="block pf w-full h-52">
               <img :src="p.img" :alt="p.title" loading="lazy"/>
             </a>
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-1">
               <div class="flex flex-wrap gap-2 mb-3">
                 <template x-for="tag in p.tags" :key="tag">
                   <span class="text-xs px-2.5 py-1 rounded-full"
@@ -258,10 +258,10 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
                 </template>
               </div>
               <a :href="p.url">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors" x-text="p.title"></h3>
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors whitespace-pre-line" x-text="p.title"></h3>
               </a>
               <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4" x-text="p.desc"></p>
-              <div class="flex items-center justify-between">
+              <div class="flex items-center justify-between mt-auto">
                 <a href="https://www.xapps.co/" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View project (Live) →</a>
                 <span class="text-xs text-zinc-400" x-text="p.year"></span>
               </div>
@@ -923,7 +923,7 @@ function app() {
     allProjects: (window.PROJECTS || []).map(p => ({ ...p, url: `case-study.html?id=${p.id}` })),
     get visibleCount() {
       if (this.filter === 'all') return this.allProjects.length;
-      return this.allProjects.filter(p => p.category === this.filter).length;
+      return this.allProjects.filter(p => Array.isArray(p.category) ? p.category.includes(this.filter) : p.category === this.filter).length;
     },
 
     init() {

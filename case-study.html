@@ -229,7 +229,7 @@
         <!-- Tags + date -->
         <div id="cs-tags" class="flex flex-wrap items-center gap-3 mb-6"></div>
 
-        <h1 id="cs-title" class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6"></h1>
+        <h1 id="cs-title" class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6 whitespace-pre-line"></h1>
 
         <p id="cs-subtitle" class="reveal d1 text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl"></p>
 
@@ -315,6 +315,12 @@
       return d.innerHTML;
     }
 
+    // Like esc(), but turns **word** into a highlighted <strong> after escaping,
+    // so text stays safe while allowing simple emphasis from data/projects.js.
+    function mark(s) {
+      return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong class="text-accent">$1</strong>');
+    }
+
     let galleryCount = 0;
 
     function renderContentBlock(block, project) {
@@ -356,7 +362,7 @@
                   <div class="step-badge shrink-0 mt-0.5">${idx + 1}</div>
                   <div>
                     <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">${esc(it.title)}</p>
-                    <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">${esc(it.desc)}</p>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">${mark(it.desc)}</p>
                   </div>
                 </div>`).join('')}
             </div>
@@ -419,9 +425,9 @@
 
       const cs = project.caseStudy || {};
 
-      document.title = `${project.title} · Case Study — Ahmed Rashwan`;
+      document.title = `${project.title.replace(/\n/g, ' ')} · Case Study — Ahmed Rashwan`;
       document.getElementById('cs-title').textContent = project.title;
-      document.getElementById('cs-subtitle').textContent = cs.subtitle || project.desc;
+      document.getElementById('cs-subtitle').innerHTML = mark(cs.subtitle || project.desc);
 
       document.getElementById('cs-tags').innerHTML =
         (project.tags || []).map((t, i) => `<span class="text-xs ${i === 0 ? 'bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'} px-2.5 py-1 rounded-full">${esc(t)}</span>`).join('')
@@ -465,7 +471,7 @@
               <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">${esc(p.categoryLabel || p.category)}</span>
             </div>
             <a href="case-study.html?id=${p.id}">
-              <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">${esc(p.title)}</h3>
+              <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors whitespace-pre-line">${esc(p.title)}</h3>
             </a>
             <a href="case-study.html?id=${p.id}" class="text-sm font-medium text-accent nav-link">View project →</a>
           </div>

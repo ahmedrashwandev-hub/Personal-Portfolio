@@ -29,9 +29,10 @@
  *  { type:'divider' }
  */
 window.PROJECTS = [
+  // XApps
   {
     id: 1,
-    title: 'XApps — Corporate Website',
+    title: 'XApps — Corporate Website\n ( More Details )',
     category: 'wordpress',
     categoryLabel: 'WordPress',
     tags: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript'],
@@ -155,10 +156,10 @@ window.PROJECTS = [
       ],
     },
   },
-  // <span class="highlight">functionality</span>
-    {
+  // Altuwayjiri
+  {
     id: 2,
-    title: 'Altuwayjiri — Electronics E-commerce Platform',
+    title: 'Altuwayjiri — Electronics E-commerce Platform ( More Details )',
     category: 'wordpress',
     categoryLabel: 'WordPress',
     tags: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript'],
@@ -289,8 +290,197 @@ window.PROJECTS = [
       ],
     },
   },
-  { id:3,  title:'Orea — Creative Agency', category:'agency',    categoryLabel:'Agency',       tags:['Agency','Animation'],                year:'2024', desc:'Bold editorial site for a Paris-based branding studio. Scroll-driven animations and custom cursor.',                      img:'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&q=80' },
-  { id:4,  title:'Vesta — Real Estate',    category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Real Estate'],         year:'2024', desc:'Conversion-focused landing page for a proptech startup entering the French market.',                                      img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80' },
+  // AqarGate
+  {
+    id: 3,
+    title: 'AqarGate — Real Estate Platform\n( More Details )',
+    category: ['wordpress', 'landing'],
+    categoryLabel: 'WordPress',
+    tags: ['WordPress', 'PHP', 'MySQL', 'REGA API', 'Nafath API'],
+    year: '2026',
+
+    desc: 'Enhanced a production Saudi real estate platform by optimizing a critical login issue from ~16s to ~2s, integrating REGA and Nafath APIs, improving property synchronization, and updating the Houzez Parent Theme while maintaining Child Theme compatibility.',
+
+    images: [
+      { type: 'video', src: 'photo/aqargate/AqarGate.mp4', poster: 'photo/aqargate/aqargate1.png' },
+      { type: 'image', src: 'photo/aqargate/aqargate1.png', alt: 'AqarGate homepage' },
+      { type: 'image', src: 'photo/aqargate/aqargate2.png', alt: 'AqarGate property page' },
+      { type: 'image', src: 'photo/aqargate/aqargate3.png', alt: 'AqarGate website' },
+      { type: 'image', src: 'photo/aqargate/aqargate4.png', alt: 'AqarGate website' },
+      { type: 'image', src: 'photo/aqargate/aqargate5.png', alt: 'AqarGate website' },
+      { type: 'image', src: 'photo/aqargate/aqargate6.png', alt: 'AqarGate website' },
+      { type: 'image', src: 'photo/aqargate/aqargate7.png', alt: 'AqarGate website' },
+      { type: 'image', src: 'photo/aqargate/aqargate8.png', alt: 'AqarGate website' },
+      { type: 'image', src: 'photo/aqargate/aqargate9.png', alt: 'AqarGate website' },
+    ],
+
+    caseStudy: {
+      subtitle: 'Production Saudi real estate platform enhanced with custom PHP development, third-party API integrations, property synchronization, and performance improvements.',
+
+      client: 'AqarGate',
+      role: 'WordPress / PHP Developer',
+      timeline: '2026',
+      deliverables: 'WordPress, PHP, MySQL, REST APIs',
+
+      stats: [
+        { value: '16s → 2s', label: 'Login Performance' },
+        { value: '2', label: 'API Integrations' },
+        { value: 'Production', label: 'Live Platform' },
+      ],
+
+      content: [
+        { type: 'heading', text: 'Project Overview' },
+        { type: 'paragraph', text: 'AqarGate is a Saudi real estate platform built with WordPress, PHP Native, MySQL, and the Houzez Theme. The platform was already developed and running in production, and my work focused on improving existing functionality, solving technical issues, and extending the platform with external services.' },
+
+        { type: 'heading', text: 'Key Improvements' },
+
+        { type: 'subheading', text: 'Performance Optimization' },
+        { type: 'list', items: [
+          'Investigated a login issue that caused requests to take around 16 seconds.',
+          'Debugged the backend and database flow to identify the source of the delay.',
+          'Resolved the issue and reduced the response time to around 2 seconds.',
+        ] },
+
+        { type: 'subheading', text: 'REGA Integration & Property Sync' },
+        { type: 'list', items: [
+          'Integrated the REGA API using the provided documentation.',
+          'Implemented and maintained the flow for retrieving property data using the advertisement license number.',
+          'Debugged and fixed issues in property data retrieval and synchronization.',
+          'Worked with both individual and bulk property synchronization to keep property information updated.',
+        ] },
+
+        { type: 'subheading', text: 'Nafath Integration' },
+        { type: 'list', items: [
+          'Integrated Nafath APIs for identity verification and authentication.',
+          'Handled API requests, responses, and integration-related issues based on the provided documentation.',
+        ] },
+
+        { type: 'subheading', text: 'Houzez Theme Upgrade' },
+        { type: 'list', items: [
+          'Updated the Houzez Parent Theme to a newer version.',
+          'The existing Child Theme was built around an older Houzez version and became incompatible after the update.',
+          'Updated the Child Theme customizations and fixed compatibility issues until it worked correctly with the new Parent Theme.',
+        ] },
+
+        { type: 'subheading', text: 'API Logging & Debugging' },
+        { type: 'list', items: [
+          'Implemented centralized logging for REGA and Nafath integrations.',
+          'Tracked API requests, responses, and errors to identify where integration problems occurred.',
+          'Made API-related debugging and troubleshooting faster and easier.',
+        ] },
+
+        { type: 'heading', text: 'Technical Work' },
+        { type: 'list', items: [
+          'WordPress & PHP Native development',
+          'MySQL database investigation and debugging',
+          'REST API integration and troubleshooting',
+          'Houzez Parent / Child Theme customization',
+          'Property data synchronization',
+          'Performance optimization',
+          'API logging and error tracking',
+        ] },
+
+        { type: 'heading', text: 'Result' },
+        { type: 'paragraph', text: 'The platform became faster and more reliable, with the login response time reduced from around 16 seconds to 2 seconds. REGA and Nafath integrations were improved, property synchronization issues were resolved, and the custom Child Theme was successfully updated to work with the newer Houzez Parent Theme.' },
+      ],
+    },
+  },
+  // TownTop
+  {
+    id: 4,
+    title: 'TownTop — Real Estate Platform',
+    category: ['wordpress', 'landing'],
+    categoryLabel: 'WordPress',
+    tags: ['WordPress', 'PHP', 'MySQL', 'REGA API', 'Nafath API'],
+    year: '2026',
+
+    desc: 'Developing a Saudi real estate platform using WordPress, PHP, and a customized RealHomes Child Theme, with Nafath authentication, REGA property integration, individual and bulk synchronization, and detailed API logging.',
+
+    images: [
+      { type: 'video', src: 'photo/towntop/TownTop.mp4', poster: 'photo/towntop/towntop1.png' },
+      { type: 'image', src: 'photo/towntop/towntop1.png', alt: 'TownTop homepage' },
+      { type: 'image', src: 'photo/towntop/towntop2.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop3.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop4.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop5.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop6.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop7.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop8.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop9.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop10.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop11.png', alt: 'TownTop website' },
+      { type: 'image', src: 'photo/towntop/towntop12.png', alt: 'TownTop website' },
+
+    ],
+
+    caseStudy: {
+      subtitle: 'A Saudi real estate platform **under development**, built with WordPress, PHP, and the RealHomes Theme, with custom authentication, government API integrations, and automated property synchronization.',
+
+      client: 'TownTop',
+      role: 'WordPress / PHP Developer',
+      timeline: '2026',
+      status: 'Under Development',
+      deliverables: 'WordPress, PHP, MySQL, REST APIs',
+
+      stats: [
+        { value: '2', label: 'API Integrations' },
+        { value: '2', label: 'Sync Methods' },
+        { value: 'Real-Time Logs', label: 'API Monitoring' },
+      ],
+
+      content: [
+        { type: 'heading', text: 'Project Overview' },
+        { type: 'paragraph', text: 'TownTop is a Saudi real estate platform currently under development. I worked on the backend functionality, custom PHP development, government API integrations, authentication flows, and property synchronization using a customized RealHomes Child Theme.' },
+
+        { type: 'heading', text: 'Key Work' },
+
+        { type: 'subheading', text: 'Nafath Authentication' },
+        { type: 'list', items: [
+          'Integrated Nafath for identity verification and authentication.',
+          'Implemented the integration flow for user login and new user registration.',
+          'Handled API requests, responses, and integration errors.',
+        ] },
+
+        { type: 'subheading', text: 'REGA Property Integration' },
+        { type: 'list', items: [
+          'Connected TownTop with the Saudi REGA platform to retrieve and manage property data.',
+          'Implemented property retrieval and synchronization flows.',
+          'Supported both individual and bulk property synchronization.',
+          'Debugged synchronization issues and handled property data updates.',
+        ] },
+
+        { type: 'subheading', text: 'API Logging & Monitoring' },
+        { type: 'list', items: [
+          'Implemented detailed logging for Nafath and REGA API interactions.',
+          'Tracked requests, responses, errors, and related operations.',
+          'Made it possible to trace an API operation and identify where an issue occurred.',
+          'Used the logs to investigate problems related to specific users and synchronization operations.',
+        ] },
+
+        { type: 'subheading', text: 'RealHomes Child Theme' },
+        { type: 'list', items: [
+          'Developed and customized the Child Theme using PHP.',
+          'Extended the RealHomes Parent Theme to support the platform requirements.',
+          'Implemented custom backend functionality while maintaining the existing theme structure.',
+        ] },
+
+        { type: 'heading', text: 'Technical Work' },
+        { type: 'list', items: [
+          'WordPress & PHP Native development',
+          'MySQL database integration',
+          'REST API integration',
+          'REGA property integration',
+          'Nafath authentication',
+          'Individual & bulk data synchronization',
+          'API logging and troubleshooting',
+          'RealHomes Parent / Child Theme customization',
+        ] },
+
+        { type: 'heading', text: 'Result' },
+        { type: 'paragraph', text: 'Built and improved the core integrations between TownTop, Nafath, and REGA, including authentication, property synchronization, and detailed API monitoring. The logging system provides clear visibility into API operations and makes it easier to trace and troubleshoot issues during development.' },
+      ],
+    },
+  },
   { id:5,  title:'Arkio — SaaS Analytics', category:'saas',      categoryLabel:'SaaS',         tags:['SaaS','Dashboard','Figma'],           year:'2024', desc:'Data visualisation dashboard for a B2B analytics platform. Designed for clarity at high data density.',                img:'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=700&q=80' },
   { id:6,  title:'Bloom — E-commerce',     category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Shopify'],               year:'2023', desc:'Custom Shopify theme for a sustainable cosmetics brand. Mobile-first with high emphasis on product imagery.',           img:'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=700&q=80' },
   { id:7,  title:'Mira — Health App',      category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Health','Tailwind'],   year:'2023', desc:'App landing page for a mental wellness startup. Warm, accessible design with strong social proof.',                    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80' },
