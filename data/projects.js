@@ -481,7 +481,95 @@ window.PROJECTS = [
       ],
     },
   },
-  { id:5,  title:'Arkio — SaaS Analytics', category:'saas',      categoryLabel:'SaaS',         tags:['SaaS','Dashboard','Figma'],           year:'2024', desc:'Data visualisation dashboard for a B2B analytics platform. Designed for clarity at high data density.',                img:'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=700&q=80' },
+  // Ahmed Hamdy — Personal Portfolio
+  {
+  id: 5,
+  title: 'Ahmed Hamdy — Personal Portfolio',
+  category: ['wordpress', 'landing'],
+  categoryLabel: 'WordPress',
+  tags: ['WordPress', 'Elementor', 'PHP', 'HTML', 'CSS', 'JavaScript'],
+  year: '2026',
+
+  desc: 'Customized a personal portfolio website based on the Kyan Theme, adapting its sections and layouts with Elementor to match the client’s requirements and implementing a custom inline contact form.',
+
+  images: [
+    { type: 'video', src: 'photo/ahmed-hamdy/AhmedHamdy.mp4', poster: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio1.png' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio1.png', alt: 'Ahmed Hamdy portfolio homepage' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio2.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio3.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio4.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio5.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio6.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio7.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio8.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio9.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio10.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio11.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio12.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio13.png', alt: 'Ahmed Hamdy portfolio' },
+
+
+  ],
+
+  caseStudy: {
+    subtitle: 'A personalized portfolio website customized from the Kyan Theme to present the client’s work, services, and personal information in a clean and tailored layout.',
+
+    client: 'Ahmed Hamdy',
+    role: 'WordPress Developer',
+    timeline: '2026',
+    deliverables: 'WordPress, Elementor, PHP, HTML/CSS, JavaScript',
+
+    stats: [
+      { value: 'Custom', label: 'Theme Customization' },
+      { value: 'Elementor', label: 'Page Builder' },
+      { value: 'Custom', label: 'Contact Form' },
+    ],
+
+    content: [
+      { type: 'heading', text: 'Project Overview' },
+      { type: 'paragraph', text: 'The client needed a personal portfolio website to showcase his work and professional profile. The project was based on the Kyan Theme, which was customized and adapted to match the client’s content, visual requirements, and overall presentation.' },
+
+      { type: 'heading', text: 'What I Worked On' },
+
+      { type: 'subheading', text: 'Kyan Theme Customization' },
+      { type: 'list', items: [
+        'Customized the existing Kyan Theme to fit the client’s requirements.',
+        'Reviewed and adapted the existing theme sections instead of rebuilding the website from scratch.',
+        'Adjusted section layouts, content, spacing, and visual elements to match the client’s needs.',
+      ] },
+
+      { type: 'subheading', text: 'Elementor Customization' },
+      { type: 'list', items: [
+        'Used Elementor to customize and restructure the existing website sections.',
+        'Adjusted individual sections and page layouts based on the client’s requirements.',
+        'Customized content and visual presentation across the main portfolio sections.',
+        'Maintained consistency between the different sections of the website.',
+      ] },
+
+      { type: 'subheading', text: 'Custom Contact Form' },
+      { type: 'list', items: [
+        'Implemented a custom contact form based on the client’s requirements.',
+        'Designed the form as an inline section instead of using a standard contact form layout.',
+        'Customized the form structure and presentation to fit naturally within the page design.',
+      ] },
+
+      { type: 'heading', text: 'Technical Work' },
+      { type: 'list', items: [
+        'WordPress Theme Customization',
+        'Kyan Theme',
+        'Elementor Page Builder',
+        'PHP Customization',
+        'HTML & CSS',
+        'JavaScript',
+        'Custom Contact Form',
+        'Responsive Layout Adjustments',
+      ] },
+
+      { type: 'heading', text: 'Result' },
+      { type: 'paragraph', text: 'Delivered a personalized portfolio website tailored to the client’s requirements while keeping the structure and visual quality of the original Kyan Theme. The website provides a clear presentation of the client’s professional work with a customized contact experience.' },
+    ],
+  },
+  },
   { id:6,  title:'Bloom — E-commerce',     category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Shopify'],               year:'2023', desc:'Custom Shopify theme for a sustainable cosmetics brand. Mobile-first with high emphasis on product imagery.',           img:'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=700&q=80' },
   { id:7,  title:'Mira — Health App',      category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Health','Tailwind'],   year:'2023', desc:'App landing page for a mental wellness startup. Warm, accessible design with strong social proof.',                    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80' },
   { id:8,  title:'Noto — Agency Rebrand',  category:'agency',    categoryLabel:'Agency',       tags:['Agency','Rebrand'],                  year:'2023', desc:'Full rebrand and website for a digital communications agency in Lyon.',                                                img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80' },
