@@ -70,7 +70,7 @@ window.PROJECTS = [
         { value: 'AR / EN', label: 'Bilingual QA (RTL / LTR)' },
       ],
       content: [
-        { type: 'heading', text: 'Project BriefWhat I worked on' },
+        { type: 'heading', text: 'Project Brief' },
         { type: 'paragraph', text: 'The client provided a document with around 30 website issues. I fixed each issue one by one and tested everything on both the Arabic and English versions of the website.' },
 
         { type: 'heading', text: 'What I worked on' },
@@ -155,7 +155,140 @@ window.PROJECTS = [
       ],
     },
   },
-  { id:2,  title:'Finlo — Fintech App',    category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Fintech','Alpine.js'], year:'2024', desc:'Marketing site and onboarding flow for a personal finance app targeting young professionals.',                              img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80' },
+  // <span class="highlight">functionality</span>
+    {
+    id: 2,
+    title: 'Altuwayjiri — Electronics E-commerce Platform',
+    category: 'wordpress',
+    categoryLabel: 'WordPress',
+    tags: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript'],
+    year: '2026',
+    desc: 'Built and launched a Saudi e-commerce platform for electronics from start to finish, including theme customization, WooCommerce setup, Arabic localization, product management, payment integration, forms, SMTP, WhatsApp contact, custom PHP changes, and Hostinger deployment.',
+    // This project's photos/videos — used for the card thumbnail, the case-study
+    // hero image, and the gallery block below. Add/remove items here only.
+    images: [
+      { type: 'video', src: 'photo/altuwayjiri/altuwayjiri.mp4', poster: 'photo/altuwayjiri/altuwayjiri2.png' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri1.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri2.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri3.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri4.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri5.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri6.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri7.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri8.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri9.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri10.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri11.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri12.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri13.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri14.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri15.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri16.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri17.png', alt: 'Blog page' },
+      { type: 'image', src: 'photo/altuwayjiri/altuwayjiri18.png', alt: 'Blog page' },
+      // { type: 'image', src: 'photo/xapps-3.png', alt: 'Projects page' },
+      // ...add up to ~30 items the same way, each pointing to a file in photo/
+    ],
+    caseStudy: {
+      subtitle: 'A Saudi electronics e-commerce platform built and customized from start to finish using WordPress, WooCommerce, WPBakery, and XStore.',
+      client: 'Altuwayjiri',
+      role: 'WordPress Developer',
+      timeline: '2026',
+      deliverables: 'WordPress, WooCommerce, PHP, WPBakery, JavaScript, HTML/CSS',
+      stats: [
+        { value: '100%', label: 'Built & Managed by Me' },
+        { value: 'WooCommerce', label: 'E-commerce Platform' },
+        { value: 'AR', label: 'Arabic Localization' },
+      ],
+      content: [
+        { type: 'heading', text: 'Project Brief' },
+        { type: 'paragraph', text: 'Built a complete Saudi e-commerce platform for selling electronics. I handled the project from setup and customization to product management, integrations, testing, and final deployment.' },
+
+        { type: 'heading', text: 'What I worked on' },
+
+        { type: 'subheading', text: 'Website Development' },
+        { type: 'list', items: [
+          'Built and customized the website from start to finish.',
+          'Customized the XStore Theme to match the client requirements.',
+          'Built and edited pages using WPBakery Page Builder.',
+          'Created a custom Child Theme for code changes.',
+          'Added custom PHP changes to the Child Theme.'
+        ] },
+
+        { type: 'subheading', text: 'WooCommerce & Products' },
+        { type: 'list', items: [
+          'Set up and configured WooCommerce for the online store.',
+          'Added and managed products with images, descriptions, prices, and details.',
+          'Used BEAR Bulk Editor to manage product data efficiently.',
+          'Configured product and shopping features based on the project needs.'
+        ] },
+
+        { type: 'subheading', text: 'Payment & Forms' },
+        { type: 'list', items: [
+          'Built a custom WooCommerce payment integration.',
+          'Tested the payment flow and checkout process.',
+          'Set up contact forms using Contact Form 7.',
+          'Configured SMTP for reliable website emails.'
+        ] },
+
+        { type: 'subheading', text: 'Arabic & User Experience' },
+        { type: 'list', items: [
+          'Translated and prepared the website in Arabic.',
+          'Adjusted the layout for Arabic content and RTL direction.',
+          'Added direct WhatsApp contact for quick communication with the store owner.',
+          'Improved the website layout and user experience across the main pages.'
+        ] },
+
+        { type: 'subheading', text: 'Deployment' },
+        { type: 'list', items: [
+          'Prepared the website for production.',
+          'Uploaded and deployed the website on Hostinger.',
+          'Tested the main website features after deployment.'
+        ] },
+
+        { type: 'heading', text: 'Process' },
+        { type: 'steps', items: [
+            {
+              title: 'Setup',
+              desc: 'Set up WordPress, WooCommerce, the theme, and the required plugins.'
+            },
+            {
+              title: 'Customize',
+              desc: 'Customized the theme and built the pages using WPBakery.'
+            },
+            {
+              title: 'Integrate',
+              desc: 'Added payment, forms, SMTP, WhatsApp, and custom PHP changes.'
+            },
+            {
+              title: 'Test & Deploy',
+              desc: 'Tested the main features and deployed the website on Hostinger.'
+            }
+          ]
+        },
+
+        { type: 'heading', text: 'Skills demonstrated' },
+        { type: 'list', items: [
+          'WordPress Development',
+          'WooCommerce',
+          'WPBakery Page Builder',
+          'XStore Theme Customization',
+          'Child Theme Development',
+          'PHP & JavaScript',
+          'Payment Integration',
+          'Product Management',
+          'Arabic RTL Localization',
+          'Contact Forms & SMTP',
+          'WordPress Deployment',
+          'Website Troubleshooting'
+        ]
+        },
+
+        { type: 'heading', text: 'Result' },
+        { type: 'paragraph', text: 'Delivered and deployed a complete Arabic e-commerce platform for the client, covering the website setup, design customization, products, payment, communication tools, and production deployment.' },
+      ],
+    },
+  },
   { id:3,  title:'Orea — Creative Agency', category:'agency',    categoryLabel:'Agency',       tags:['Agency','Animation'],                year:'2024', desc:'Bold editorial site for a Paris-based branding studio. Scroll-driven animations and custom cursor.',                      img:'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&q=80' },
   { id:4,  title:'Vesta — Real Estate',    category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Real Estate'],         year:'2024', desc:'Conversion-focused landing page for a proptech startup entering the French market.',                                      img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80' },
   { id:5,  title:'Arkio — SaaS Analytics', category:'saas',      categoryLabel:'SaaS',         tags:['SaaS','Dashboard','Figma'],           year:'2024', desc:'Data visualisation dashboard for a B2B analytics platform. Designed for clarity at high data density.',                img:'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=700&q=80' },
