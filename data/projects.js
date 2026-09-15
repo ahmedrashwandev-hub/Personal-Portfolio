@@ -529,6 +529,7 @@ window.PROJECTS = [
     { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio11.png', alt: 'Ahmed Hamdy portfolio' },
     { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio12.png', alt: 'Ahmed Hamdy portfolio' },
     { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio13.png', alt: 'Ahmed Hamdy portfolio' },
+    { type: 'image', src: 'photo/ahmed-hamdy/Ahmed Hamdy — Personal Portfolio14.png', alt: 'Ahmed Hamdy portfolio' },
 
 
   ],
@@ -549,29 +550,29 @@ window.PROJECTS = [
 
     content: [
       { type: 'heading', text: 'Project Overview' },
-      { type: 'paragraph', text: 'The client needed a personal portfolio website to showcase his work and professional profile. The project was based on the Kyan Theme, which was customized and adapted to match the client’s content, visual requirements, and overall presentation.' },
+      { type: 'paragraph', text: 'The project involved customizing and adapting a WordPress website to present the client’s professional work and personal information. project was based on the **Kyan Theme**, which was customized and adapted to match the client’s content, visual requirements, and overall presentation.' },
 
       { type: 'heading', text: 'What I Worked On' },
 
       { type: 'subheading', text: 'Kyan Theme Customization' },
       { type: 'list', items: [
-        'Customized the existing Kyan Theme to fit the client’s requirements.',
-        'Reviewed and adapted the existing theme sections instead of rebuilding the website from scratch.',
-        'Adjusted section layouts, content, spacing, and visual elements to match the client’s needs.',
+        'Customized the existing **Kyan Theme** to fit the client’s requirements.',
+        'Reviewed and adapted the existing **theme sections** instead of rebuilding the website from scratch.',
+        'Adjusted **section layouts**, content, spacing, and visual elements to match the client’s needs.',
       ] },
 
       { type: 'subheading', text: 'Elementor Customization' },
       { type: 'list', items: [
-        'Used Elementor to customize and restructure the existing website sections.',
-        'Adjusted individual sections and page layouts based on the client’s requirements.',
-        'Customized content and visual presentation across the main portfolio sections.',
-        'Maintained consistency between the different sections of the website.',
+        'Used **Elementor** to customize and **restructure** the existing website sections.',
+        'Adjusted individual **sections** and **page layouts** based on the client’s requirements.',
+        'Customized content and **visual presentation** across the main portfolio sections.',
+        'Maintained **consistency** between the different sections of the website.',
       ] },
 
       { type: 'subheading', text: 'Custom Contact Form' },
       { type: 'list', items: [
-        'Implemented a custom contact form based on the client’s requirements.',
-        'Designed the form as an inline section instead of using a standard contact form layout.',
+        'Implemented a **custom contact form** based on the client’s requirements.',
+        'Designed the form as an **inline section** instead of using a standard contact form layout.',
         'Customized the form structure and presentation to fit naturally within the page design.',
       ] },
 
