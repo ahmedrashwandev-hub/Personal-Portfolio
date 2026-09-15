@@ -28,179 +28,178 @@
  */
 window.PROJECTS = [
   // XApps
-{
-id: 1,
-title: 'XApps — Corporate Website\n ( More Details )',
-liveUrl: 'https://www.xapps.co/',
-category: 'wordpress',
-categoryLabel: 'WordPress',
-tags: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript'],
-year: '2026',
-desc: 'Worked on an existing bilingual WordPress website, handling customization, troubleshooting, responsive improvements, content management, and frontend enhancements across Arabic and English versions.',
+  {
+  id: 1,
+  title: 'XApps — Corporate Website\n ( More Details )',
+  liveUrl: 'https://www.xapps.co/',
+  category: 'wordpress',
+  categoryLabel: 'WordPress',
+  tags: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript'],
+  year: '2026',
+  desc: 'Worked on an existing bilingual WordPress website, handling customization, troubleshooting, responsive improvements, content management, and frontend enhancements across Arabic and English versions.',
 
-images: [
-{ type: 'video', src: 'photo/XApps/XApps.mp4', poster: 'photo/XApps/XApps1.png' },
-{ type: 'image', src: 'photo/XApps/XApps2.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps3.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps4.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps5.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps6.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps7.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps8.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps9.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps10.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps11.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps12.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps13.png', alt: 'Blog page' },
-{ type: 'image', src: 'photo/XApps/XApps14.png', alt: 'Blog page' },
-],
+  images: [
+  { type: 'video', src: 'photo/XApps/XApps.mp4', poster: 'photo/XApps/XApps1.png' },
+  { type: 'image', src: 'photo/XApps/XApps2.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps3.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps4.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps5.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps6.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps7.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps8.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps9.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps10.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps11.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps12.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps13.png', alt: 'Blog page' },
+  { type: 'image', src: 'photo/XApps/XApps14.png', alt: 'Blog page' },
+  ],
 
-caseStudy: {
-subtitle: 'A bilingual Arabic/English WordPress website where I worked on customization, troubleshooting, responsive behavior, content management, and frontend improvements.',
-client: 'XApps',
-role: 'WordPress Developer',
-timeline: '2026',
-deliverables: 'WordPress, PHP, HTML/CSS, JavaScript',
+  caseStudy: {
+  subtitle: 'A bilingual Arabic/English WordPress website where I worked on customization, troubleshooting, responsive behavior, content management, and frontend improvements.',
+  client: 'XApps',
+  role: 'WordPress Developer',
+  timeline: '2026',
+  deliverables: 'WordPress, PHP, HTML/CSS, JavaScript',
 
-stats: [
-  { value: 'AR / EN', label: 'Bilingual Development' },
-  { value: 'RTL / LTR', label: 'Localization Support' },
-  { value: 'WordPress', label: 'Development & Customization' },
-],
+  stats: [
+    { value: 'AR / EN', label: 'Bilingual Development' },
+    { value: 'RTL / LTR', label: 'Localization Support' },
+    { value: 'WordPress', label: 'Development & Customization' },
+  ],
 
-content: [
-  {
-    type: 'heading',
-    text: 'Project Overview'
-  },
-  {
-    type: 'paragraph',
-    text: '**Worked** on an existing **corporate WordPress website**, improving its **functionality, frontend experience, responsiveness, and content management** across both Arabic and English versions.'
-  },
+  content: [
+    {
+      type: 'heading',
+      text: 'Project Overview'
+    },
+    {
+      type: 'paragraph',
+      text: '**Worked** on an existing **corporate WordPress website**, improving its **functionality, frontend experience, responsiveness, and content management** across both Arabic and English versions.'
+    },
 
-  {
-    type: 'heading',
-    text: 'What I Worked On'
-  },
+    {
+      type: 'heading',
+      text: 'What I Worked On'
+    },
 
-  {
-    type: 'subheading',
-    text: 'WordPress Development & Customization'
-  },
-  {
-    type: 'list',
-    items: [
-      'Customized and maintained an existing **WordPress website**.',
-      'Worked with **WordPress themes, templates, and dashboard functionality**.',
-      'Improved project and blog content management.',
-      'Worked with **custom content structures** and WordPress forms.',
-    ]
-  },
+    {
+      type: 'subheading',
+      text: 'WordPress Development & Customization'
+    },
+    {
+      type: 'list',
+      items: [
+        'Customized and maintained an existing **WordPress website**.',
+        'Worked with **WordPress themes, templates, and dashboard functionality**.',
+        'Improved project and blog content management.',
+        'Worked with **custom content structures** and WordPress forms.',
+      ]
+    },
 
-  {
-    type: 'subheading',
-    text: 'Frontend Development'
-  },
-  {
-    type: 'list',
-    items: [
-      'Improved website layouts, spacing, typography, navigation, and interactive elements.',
-      'Fixed **responsive and mobile layout** issues across different screen sizes.',
-      'Improved image presentation and consistency across website sections.',
-      'Used **PHP, HTML, CSS, and JavaScript** to implement website changes.',
-    ]
-  },
+    {
+      type: 'subheading',
+      text: 'Frontend Development'
+    },
+    {
+      type: 'list',
+      items: [
+        'Improved website layouts, spacing, typography, navigation, and interactive elements.',
+        'Fixed **responsive and mobile layout** issues across different screen sizes.',
+        'Improved image presentation and consistency across website sections.',
+        'Used **PHP, HTML, CSS, and JavaScript** to implement website changes.',
+      ]
+    },
 
-  {
-    type: 'subheading',
-    text: 'Arabic & English Support'
-  },
-  {
-    type: 'list',
-    items: [
-      'Worked across both **Arabic and English versions** of the website.',
-      'Handled **RTL/LTR layout** differences.',
-      'Improved Arabic typography and **Cairo font** implementation.',
-      'Ensured consistent layouts and content presentation between both languages.',
-    ]
-  },
+    {
+      type: 'subheading',
+      text: 'Arabic & English Support'
+    },
+    {
+      type: 'list',
+      items: [
+        'Worked across both **Arabic and English versions** of the website.',
+        'Handled **RTL/LTR layout** differences.',
+        'Improved Arabic typography and **Cairo font** implementation.',
+        'Ensured consistent layouts and content presentation between both languages.',
+      ]
+    },
 
-  {
-    type: 'subheading',
-    text: 'Projects & Blog'
-  },
-  {
-    type: 'list',
-    items: [
-      'Improved **Projects pages** and project content presentation.',
-      'Worked on **Blog articles, categories, tags, and related content** sections.',
-      'Improved image handling and content layouts across blog pages.',
-      'Improved navigation between projects and articles.',
-    ]
-  },
+    {
+      type: 'subheading',
+      text: 'Projects & Blog'
+    },
+    {
+      type: 'list',
+      items: [
+        'Improved **Projects pages** and project content presentation.',
+        'Worked on **Blog articles, categories, tags, and related content** sections.',
+        'Improved image handling and content layouts across blog pages.',
+        'Improved navigation between projects and articles.',
+      ]
+    },
 
-  {
-    type: 'subheading',
-    text: 'WordPress Dashboard & Content Management'
-  },
-  {
-    type: 'list',
-    items: [
-      'Improved the **WordPress Dashboard** experience for managing website content.',
-      'Worked on adding and editing project information.',
-      'Improved **content management and editing workflows**.',
-    ]
-  },
+    {
+      type: 'subheading',
+      text: 'WordPress Dashboard & Content Management'
+    },
+    {
+      type: 'list',
+      items: [
+        'Improved the **WordPress Dashboard** experience for managing website content.',
+        'Worked on adding and editing project information.',
+        'Improved **content management and editing workflows**.',
+      ]
+    },
 
-  {
-    type: 'subheading',
-    text: 'Debugging & Testing'
-  },
-  {
-    type: 'list',
-    items: [
-      'Investigated and resolved **WordPress functionality and frontend issues**.',
-      'Performed **debugging and troubleshooting** across different website sections.',
-      'Tested changes across **Arabic and English versions**.',
-      'Verified **responsive behavior** across desktop and mobile devices.',
-      'Performed **cross-browser and mobile testing**.',
-    ]
-  },
+    {
+      type: 'subheading',
+      text: 'Debugging & Testing'
+    },
+    {
+      type: 'list',
+      items: [
+        'Investigated and resolved **WordPress functionality and frontend issues**.',
+        'Performed **debugging and troubleshooting** across different website sections.',
+        'Tested changes across **Arabic and English versions**.',
+        'Verified **responsive behavior** across desktop and mobile devices.',
+        'Performed **cross-browser and mobile testing**.',
+      ]
+    },
 
-  {
-    type: 'heading',
-    text: 'Skills Demonstrated'
-  },
-  {
-    type: 'list',
-    items: [
-      'WordPress Development & Customization',
-      'PHP, HTML, CSS & JavaScript',
-      'Responsive & Mobile Development',
-      'Arabic RTL / English LTR',
-      'WordPress Debugging & Troubleshooting',
-      'WordPress Dashboard & Content Management',
-      'Forms & Custom Content Structures',
-      'Cross-browser & Mobile Testing',
-    ]
-  },
+    {
+      type: 'heading',
+      text: 'Skills Demonstrated'
+    },
+    {
+      type: 'list',
+      items: [
+        'WordPress Development & Customization',
+        'PHP, HTML, CSS & JavaScript',
+        'Responsive & Mobile Development',
+        'Arabic RTL / English LTR',
+        'WordPress Debugging & Troubleshooting',
+        'WordPress Dashboard & Content Management',
+        'Forms & Custom Content Structures',
+        'Cross-browser & Mobile Testing',
+      ]
+    },
 
-  {
-    type: 'heading',
-    text: 'Result'
+    {
+      type: 'heading',
+      text: 'Result'
+    },
+    {
+      type: 'paragraph',
+      text: '**Improved** the overall **reliability, responsiveness, and consistency** of the website while making its content and bilingual experience easier to manage and use.'
+    },
+  ],
   },
-  {
-    type: 'paragraph',
-    text: '**Improved** the overall **reliability, responsiveness, and consistency** of the website while making its content and bilingual experience easier to manage and use.'
   },
-],
-},
-},
-
   // Altuwayjiri
   {
     id: 2,
-    title: 'Altuwayjiri — Electronics E-commerce Platform ( More Details )',
+    title: 'Altuwayjiri — Electronics E-commerce Platform\n ( More Details )',
     liveUrl: 'https://altuwayjiri.com/',
     category: 'wordpress',
     categoryLabel: 'WordPress',
@@ -252,63 +251,41 @@ content: [
         { type: 'subheading', text: 'Website Development' },
         { type: 'list', items: [
           'Built and customized the website from start to finish.',
-          'Customized the XStore Theme to match the client requirements.',
-          'Built and edited pages using WPBakery Page Builder.',
-          'Created a custom Child Theme for code changes.',
-          'Added custom PHP changes to the Child Theme.'
+          'Customized the **XStore Theme** to match the client requirements.',
+          'Built and edited pages using **WPBakery Page Builder**.',
+          'Created a custom **Child Theme** for code changes.',
+          'Added custom **PHP** changes to the Child Theme.'
         ] },
 
         { type: 'subheading', text: 'WooCommerce & Products' },
         { type: 'list', items: [
-          'Set up and configured WooCommerce for the online store.',
+          'Set up and configured **WooCommerce** for the online store.',
           'Added and managed products with images, descriptions, prices, and details.',
-          'Used BEAR Bulk Editor to manage product data efficiently.',
+          'Used **BEAR Bulk Editor** to manage product data efficiently.',
           'Configured product and shopping features based on the project needs.'
         ] },
 
         { type: 'subheading', text: 'Payment & Forms' },
         { type: 'list', items: [
-          'Built a custom WooCommerce payment integration.',
-          'Tested the payment flow and checkout process.',
-          'Set up contact forms using Contact Form 7.',
-          'Configured SMTP for reliable website emails.'
+          'Tested the **payment flow** and checkout process.',
+          'Set up contact forms using **Contact Form 7**.',
+          'Configured **SMTP** for reliable website emails.'
         ] },
 
         { type: 'subheading', text: 'Arabic & User Experience' },
         { type: 'list', items: [
-          'Translated and prepared the website in Arabic.',
-          'Adjusted the layout for Arabic content and RTL direction.',
-          'Added direct WhatsApp contact for quick communication with the store owner.',
-          'Improved the website layout and user experience across the main pages.'
+          'Translated and prepared the website in **Arabic**.',
+          'Adjusted the layout for Arabic content and **RTL** direction.',
+          'Added direct **WhatsApp** contact for quick communication with the store owner.',
+          'Improved the website layout and **user experience** across the main pages.'
         ] },
 
         { type: 'subheading', text: 'Deployment' },
         { type: 'list', items: [
-          'Prepared the website for production.',
-          'Uploaded and deployed the website on Hostinger.',
+          'Prepared the website for **production**.',
+          'Uploaded and deployed the website on **Hostinger**.',
           'Tested the main website features after deployment.'
         ] },
-
-        { type: 'heading', text: 'Process' },
-        { type: 'steps', items: [
-            {
-              title: 'Setup',
-              desc: 'Set up WordPress, WooCommerce, the theme, and the required plugins.'
-            },
-            {
-              title: 'Customize',
-              desc: 'Customized the theme and built the pages using WPBakery.'
-            },
-            {
-              title: 'Integrate',
-              desc: 'Added payment, forms, SMTP, WhatsApp, and custom PHP changes.'
-            },
-            {
-              title: 'Test & Deploy',
-              desc: 'Tested the main features and deployed the website on Hostinger.'
-            }
-          ]
-        },
 
         { type: 'heading', text: 'Skills demonstrated' },
         { type: 'list', items: [
