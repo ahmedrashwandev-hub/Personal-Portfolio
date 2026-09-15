@@ -18,6 +18,7 @@
   <meta name="author" content="Ahmed Rashwan"/>
   <meta property="og:type" content="article"/>
   <title id="page-title">Case Study — Ahmed Rashwan</title>
+  <link rel="icon" type="image/png" href="photo/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="data/projects.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -75,6 +76,8 @@
     .prose-cs hr{border:none;border-top:1px solid #e4e4e7;margin:2.5rem 0;}
     .dark .prose-cs hr{border-top-color:#27272a;}
     .prose-cs a{color:#FF6B2B;text-decoration:underline;text-underline-offset:3px;}
+    .prose-cs strong.mark{color:#3f3f46;font-weight:700;}
+    .dark .prose-cs strong.mark{color:#d4d4d8;}
 
     /* Stat card */
     .stat-card{border-left:3px solid #FF6B2B;}
@@ -180,10 +183,12 @@
         <span class="text-zinc-900 dark:text-white">Ahmed</span><span class="text-accent"> Rashwan</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
+        <li><a href="index.html#hero" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Home</a></li>
         <li><a href="index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
         <li><a href="projects.html" class="nav-link text-accent font-medium">Work</a></li>
         <li><a href="index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
-        <li><a href="blog.html" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Blog</a></li>
+        <li><a href="index.html#experience" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Experience</a></li>
+        <li><a href="index.html#certificates" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Certificates</a></li>
         <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
       <div class="flex items-center gap-3">
@@ -208,7 +213,6 @@
         <li><a href="index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Services</a></li>
         <li><a href="projects.html" @click="mobileMenu=false" class="block text-accent font-medium">Work</a></li>
         <li><a href="index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">About</a></li>
-        <li><a href="blog.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Blog</a></li>
         <li><a href="index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Contact</a></li>
       </ul>
     </div>
@@ -232,6 +236,11 @@
         <h1 id="cs-title" class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6 whitespace-pre-line"></h1>
 
         <p id="cs-subtitle" class="reveal d1 text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl"></p>
+
+        <a id="cs-live" href="#" target="_blank" rel="noopener noreferrer" hidden class="reveal d1 inline-flex items-center gap-2 mb-10 px-5 py-3 rounded-full bg-accent text-white font-medium text-sm hover:opacity-90 transition-opacity">
+          Visit Live Website
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
 
         <!-- Meta row -->
         <div class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-zinc-100 dark:border-zinc-900">
@@ -286,9 +295,9 @@
           <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
           <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
           <div class="relative z-10">
-            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Open to New Opportunities</p>
+            <p class="text-xs font-medium text-accent tracking-widest mb-4">Open to New Opportunities</p>
             <h3 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">If you have an opportunity? Let's connect.</h3>
-            <p class="text-zinc-400 mx-auto mb-8">I'm open to joining your team as a developer and building reliable, scalable web applications. I'd love to hear from you.</p>
+            <p class="text-zinc-400 mx-auto mb-8">I'm open to joining your team as a developer and building reliable, scalable web applications. I'd be glad to connect.</p>
             <a href="https://ahmedrashwandev-hub.github.io/Personal-Portfolio/index.html#contact" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">
               Contact Me →
             </a>
@@ -301,7 +310,7 @@
 
   <footer class="border-t border-zinc-100 dark:border-zinc-900">
     <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-zinc-400">© <span id="yr"></span> Eliott. All rights reserved. <br> Developed by <a href="https://lbegey78.gumroad.com/" target="_blank" class="font-bold">Laurent Begey</a> • Distributed by <a href="https://themewagon.com/" target="_blank" class="font-bold">ThemeWagon</a></p>
+      <p class="text-sm text-zinc-400"></span>Ahmed Rashwan. All rights reserved © 2026.<br> Developed by <a href="https://lbegey78.gumroad.com/" target="_blank" class="font-bold">Ahmed Rashwan</a><a href="https://themewagon.com/" target="_blank" class="font-bold"></a></p>
       <p class="text-xs text-zinc-500">Built with <a href="https://tailwindcss.com" class="hover:text-zinc-900 dark:hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">Tailwind CSS</a> &amp; <a href="https://alpinejs.dev" class="hover:text-zinc-900 dark:hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">Alpine.js</a></p>
     </div>
   </footer>
@@ -318,7 +327,7 @@
     // Like esc(), but turns **word** into a highlighted <strong> after escaping,
     // so text stays safe while allowing simple emphasis from data/projects.js.
     function mark(s) {
-      return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong class="text-accent">$1</strong>');
+      return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong class="mark">$1</strong>');
     }
 
     let galleryCount = 0;
@@ -330,11 +339,11 @@
         case 'subheading':
           return `<h3>${esc(block.text)}</h3>`;
         case 'paragraph':
-          return `<p>${esc(block.text)}</p>`;
+          return `<p>${mark(block.text)}</p>`;
         case 'quote':
           return `<blockquote><p>${esc(block.text)}</p></blockquote>`;
         case 'list':
-          return `<ul>${block.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`;
+          return `<ul>${block.items.map(i => `<li>${mark(i)}</li>`).join('')}</ul>`;
         case 'divider':
           return `<hr/>`;
         case 'image':
@@ -425,9 +434,32 @@
 
       const cs = project.caseStudy || {};
 
-      document.title = `${project.title.replace(/\n/g, ' ')} · Case Study — Ahmed Rashwan`;
+      document.title = 'Ahmed & Backend Engineer';
       document.getElementById('cs-title').textContent = project.title;
       document.getElementById('cs-subtitle').innerHTML = mark(cs.subtitle || project.desc);
+
+      const liveBtn = document.getElementById('cs-live');
+      const liveConfig = project.liveButton || {};
+      const liveUrl = project.liveUrl || liveConfig.url;
+      const liveLabel = liveConfig.label || 'Visit Live Website';
+
+      if (liveConfig.disabled || (!liveUrl && liveConfig.label)) {
+        liveBtn.innerHTML = `${esc(liveLabel)}`;
+        liveBtn.href = '#';
+        liveBtn.hidden = false;
+        liveBtn.setAttribute('aria-disabled', 'true');
+        liveBtn.classList.add('pointer-events-none', 'opacity-60');
+        liveBtn.classList.remove('hover:opacity-90');
+      } else if (liveUrl) {
+        liveBtn.innerHTML = `Visit Live Website <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>`;
+        liveBtn.href = liveUrl;
+        liveBtn.hidden = false;
+        liveBtn.removeAttribute('aria-disabled');
+        liveBtn.classList.remove('pointer-events-none', 'opacity-60');
+        liveBtn.classList.add('hover:opacity-90');
+      } else {
+        liveBtn.hidden = true;
+      }
 
       document.getElementById('cs-tags').innerHTML =
         (project.tags || []).map((t, i) => `<span class="text-xs ${i === 0 ? 'bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'} px-2.5 py-1 rounded-full">${esc(t)}</span>`).join('')

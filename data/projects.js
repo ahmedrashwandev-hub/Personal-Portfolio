@@ -2,10 +2,8 @@
  * Single source of truth for all project data — used by index.html (grid/cards)
  * and case-study.html (project detail page, driven by ?id=).
  * No server/DB: this is a static array bundled with the site.
- *
- * To add a project: push a new object with a unique `id`.
- * `caseStudy` is optional — if omitted, case-study.html falls back to a
- * simple layout built from title/desc/img/tags.
+      { type: 'paragraph', text: 'Built and customized a Filament-based administration system to manage the platform and its public website from a centralized dashboard.' },
+      { type: 'paragraph', text: 'I also developed a separate CMS cluster for managing the website-related content and functionality, keeping CMS responsibilities organized separately from the core marketplace administration.' },
  *
  * Each project owns its OWN photos/videos in its own `images` array (no
  * shared/external lists). `img` (card thumbnail) and `caseStudy.heroImg` are
@@ -30,136 +28,180 @@
  */
 window.PROJECTS = [
   // XApps
+{
+id: 1,
+title: 'XApps — Corporate Website\n ( More Details )',
+liveUrl: 'https://www.xapps.co/',
+category: 'wordpress',
+categoryLabel: 'WordPress',
+tags: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript'],
+year: '2026',
+desc: 'Worked on an existing bilingual WordPress website, handling customization, troubleshooting, responsive improvements, content management, and frontend enhancements across Arabic and English versions.',
+
+images: [
+{ type: 'video', src: 'photo/XApps/XApps.mp4', poster: 'photo/XApps/XApps1.png' },
+{ type: 'image', src: 'photo/XApps/XApps2.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps3.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps4.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps5.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps6.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps7.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps8.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps9.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps10.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps11.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps12.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps13.png', alt: 'Blog page' },
+{ type: 'image', src: 'photo/XApps/XApps14.png', alt: 'Blog page' },
+],
+
+caseStudy: {
+subtitle: 'A bilingual Arabic/English WordPress website where I worked on customization, troubleshooting, responsive behavior, content management, and frontend improvements.',
+client: 'XApps',
+role: 'WordPress Developer',
+timeline: '2026',
+deliverables: 'WordPress, PHP, HTML/CSS, JavaScript',
+
+stats: [
+  { value: 'AR / EN', label: 'Bilingual Development' },
+  { value: 'RTL / LTR', label: 'Localization Support' },
+  { value: 'WordPress', label: 'Development & Customization' },
+],
+
+content: [
   {
-    id: 1,
-    title: 'XApps — Corporate Website\n ( More Details )',
-    category: 'wordpress',
-    categoryLabel: 'WordPress',
-    tags: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript'],
-    year: '2026',
-    desc: 'Developed and customized a bilingual WordPress website, fixing layout and responsive issues, improving the Projects and Blog sections, and enhancing the overall user experience across Arabic and English pages.',
-    // This project's photos/videos — used for the card thumbnail, the case-study
-    // hero image, and the gallery block below. Add/remove items here only.
-    images: [
-      { type: 'video', src: 'photo/XApps/XApps.mp4', poster: 'photo/XApps/XApps1.png' },
-      { type: 'image', src: 'photo/XApps/XApps2.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps3.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps4.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps5.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps6.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps7.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps8.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps9.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps10.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps11.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps12.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps13.png', alt: 'Blog page' },
-      { type: 'image', src: 'photo/XApps/XApps14.png', alt: 'Blog page' },
-
-      // { type: 'image', src: 'photo/xapps-3.png', alt: 'Projects page' },
-      // ...add up to ~30 items the same way, each pointing to a file in photo/
-    ],
-    caseStudy: {
-      subtitle: 'A bilingual (Arabic/English) corporate WordPress website, rebuilt for consistent layout, responsiveness, and a clearer content experience.',
-      client: 'XApps',
-      role: 'WordPress Developer',
-      timeline: '2026',
-      deliverables: 'WordPress, PHP, HTML/CSS, JS',
-      stats: [
-        { value: '7+', label: 'Website Areas Improved' },
-        { value: '25+', label: 'Bugs & UI issues resolved' },
-        { value: 'AR / EN', label: 'Bilingual QA (RTL / LTR)' },
-      ],
-      content: [
-        { type: 'heading', text: 'Project Brief' },
-        { type: 'paragraph', text: 'The client provided a document with around 30 website issues. I fixed each issue one by one and tested everything on both the Arabic and English versions of the website.' },
-
-        { type: 'heading', text: 'What I worked on' },
-
-        { type: 'subheading', text: 'Global' },
-        { type: 'list', items: [
-          'Improved the Arabic and English versions of the website.',
-          'Fixed general UI, typography, spacing, and alignment issues.',
-          'Improved consistency between the Arabic and English versions.',
-        ] },
-
-        { type: 'subheading', text: 'Homepage (AR/EN)' },
-        { type: 'list', items: [
-          'Fixed responsive and mobile layout issues across different screen sizes.',
-          'Improved Arabic RTL layout and applied the Cairo font across Arabic pages.',
-          'Improved the Projects section, including project images and navigation.',
-          'Improved Blog section images and layout.',
-          'Improved hover effects and clickable elements.',
-        ] },
-
-        { type: 'subheading', text: 'Contact info block' },
-        { type: 'list', items: [
-          'Improved the contact information layout and alignment.',
-          'Fixed the contact/email form functionality.',
-          'Improved the presentation of email addresses and social media links.',
-        ] },
-
-        { type: 'subheading', text: 'WordPress dashboard' },
-        { type: 'list', items: [
-          'Improved WordPress Dashboard functionality for managing website content.',
-          'Fixed issues with adding and editing projects.',
-          'Improved project content management and editing.',
-        ] },
-
-        { type: 'subheading', text: 'Projects page (AR/EN)' },
-        { type: 'list', items: [
-          'Improved the Projects page layout in both languages.',
-          'Fixed project image display and sizing issues.',
-          'Improved project navigation and links.',
-          'Fixed differences between the Arabic and English versions.',
-        ] },
-
-        { type: 'subheading', text: 'Blog article page (AR/EN)' },
-        { type: 'list', items: [
-          'Improved article titles, images, categories, tags, and spacing.',
-          'Fixed image sizing to display images correctly without unwanted cropping.',
-          'Improved the article layout and readability.',
-          'Fixed issues with article titles and page content in the Arabic version.',
-        ] },
-
-        { type: 'subheading', text: 'Blog category pages (AR/EN)' },
-        { type: 'list', items: [
-          'Improved article title sizes and spacing.',
-          'Fixed sidebar image sizing and display.',
-          'Improved categories, tags, and article layout.',
-          'Fixed image spacing and alignment issues.',
-          'Improved the overall blog browsing experience in both languages.',
-        ] },
-
-        { type: 'heading', text: 'Process' },
-        { type: 'steps', items: [
-          { title: 'Review', desc: 'Reviewed the client\'s bug list and grouped the issues by website section.' },
-          { title: 'Fix', desc: 'Fixed the reported UI, responsive, image, and functionality issues one by one.' },
-          { title: 'Backend & WordPress', desc: 'Fixed the contact form and Projects management issues in WordPress.' },
-          { title: 'Test', desc: 'Tested every fix on both Arabic (RTL) and English (LTR) versions, including mobile.' },
-        ] },
-
-        { type: 'heading', text: 'Skills demonstrated' },
-        { type: 'list', items: [
-          'WordPress Development & Customization',
-          'PHP, HTML, CSS & JavaScript',
-          'Responsive & Mobile Design',
-          'Arabic RTL / English LTR Support',
-          'WordPress Debugging & Troubleshooting',
-          'UI, Layout & Image Optimization',
-          'WordPress Forms & Custom Post Types',
-          'Cross-browser & Mobile Testing',
-        ] },
-
-        { type: 'heading', text: 'Result' },
-        { type: 'paragraph', text: 'All reported issues were fixed and verified in both Arabic and English. The website now provides a more consistent and reliable experience across desktop and mobile.' },
-      ],
-    },
+    type: 'heading',
+    text: 'Project Overview'
   },
+  {
+    type: 'paragraph',
+    text: '**Worked** on an existing **corporate WordPress website**, improving its **functionality, frontend experience, responsiveness, and content management** across both Arabic and English versions.'
+  },
+
+  {
+    type: 'heading',
+    text: 'What I Worked On'
+  },
+
+  {
+    type: 'subheading',
+    text: 'WordPress Development & Customization'
+  },
+  {
+    type: 'list',
+    items: [
+      'Customized and maintained an existing **WordPress website**.',
+      'Worked with **WordPress themes, templates, and dashboard functionality**.',
+      'Improved project and blog content management.',
+      'Worked with **custom content structures** and WordPress forms.',
+    ]
+  },
+
+  {
+    type: 'subheading',
+    text: 'Frontend Development'
+  },
+  {
+    type: 'list',
+    items: [
+      'Improved website layouts, spacing, typography, navigation, and interactive elements.',
+      'Fixed **responsive and mobile layout** issues across different screen sizes.',
+      'Improved image presentation and consistency across website sections.',
+      'Used **PHP, HTML, CSS, and JavaScript** to implement website changes.',
+    ]
+  },
+
+  {
+    type: 'subheading',
+    text: 'Arabic & English Support'
+  },
+  {
+    type: 'list',
+    items: [
+      'Worked across both **Arabic and English versions** of the website.',
+      'Handled **RTL/LTR layout** differences.',
+      'Improved Arabic typography and **Cairo font** implementation.',
+      'Ensured consistent layouts and content presentation between both languages.',
+    ]
+  },
+
+  {
+    type: 'subheading',
+    text: 'Projects & Blog'
+  },
+  {
+    type: 'list',
+    items: [
+      'Improved **Projects pages** and project content presentation.',
+      'Worked on **Blog articles, categories, tags, and related content** sections.',
+      'Improved image handling and content layouts across blog pages.',
+      'Improved navigation between projects and articles.',
+    ]
+  },
+
+  {
+    type: 'subheading',
+    text: 'WordPress Dashboard & Content Management'
+  },
+  {
+    type: 'list',
+    items: [
+      'Improved the **WordPress Dashboard** experience for managing website content.',
+      'Worked on adding and editing project information.',
+      'Improved **content management and editing workflows**.',
+    ]
+  },
+
+  {
+    type: 'subheading',
+    text: 'Debugging & Testing'
+  },
+  {
+    type: 'list',
+    items: [
+      'Investigated and resolved **WordPress functionality and frontend issues**.',
+      'Performed **debugging and troubleshooting** across different website sections.',
+      'Tested changes across **Arabic and English versions**.',
+      'Verified **responsive behavior** across desktop and mobile devices.',
+      'Performed **cross-browser and mobile testing**.',
+    ]
+  },
+
+  {
+    type: 'heading',
+    text: 'Skills Demonstrated'
+  },
+  {
+    type: 'list',
+    items: [
+      'WordPress Development & Customization',
+      'PHP, HTML, CSS & JavaScript',
+      'Responsive & Mobile Development',
+      'Arabic RTL / English LTR',
+      'WordPress Debugging & Troubleshooting',
+      'WordPress Dashboard & Content Management',
+      'Forms & Custom Content Structures',
+      'Cross-browser & Mobile Testing',
+    ]
+  },
+
+  {
+    type: 'heading',
+    text: 'Result'
+  },
+  {
+    type: 'paragraph',
+    text: '**Improved** the overall **reliability, responsiveness, and consistency** of the website while making its content and bilingual experience easier to manage and use.'
+  },
+],
+},
+},
+
   // Altuwayjiri
   {
     id: 2,
     title: 'Altuwayjiri — Electronics E-commerce Platform ( More Details )',
+    liveUrl: 'https://altuwayjiri.com/',
     category: 'wordpress',
     categoryLabel: 'WordPress',
     tags: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript'],
@@ -294,6 +336,7 @@ window.PROJECTS = [
   {
     id: 3,
     title: 'AqarGate — Real Estate Platform\n( More Details )',
+    liveUrl: 'https://aqargate.com/marketplace',
     category: ['wordpress', 'landing'],
     categoryLabel: 'WordPress',
     tags: ['WordPress', 'PHP', 'MySQL', 'REGA API', 'Nafath API'],
@@ -302,7 +345,7 @@ window.PROJECTS = [
     desc: 'Enhanced a production Saudi real estate platform by optimizing a critical login issue from ~16s to ~2s, integrating REGA and Nafath APIs, improving property synchronization, and updating the Houzez Parent Theme while maintaining Child Theme compatibility.',
 
     images: [
-      { type: 'video', src: 'photo/aqargate/AqarGate.mp4', poster: 'photo/aqargate/aqargate1.png' },
+      { type: 'video', src: 'photo/aqargate/aqargate.mp4', poster: 'photo/aqargate/aqargate1.png' },
       { type: 'image', src: 'photo/aqargate/aqargate1.png', alt: 'AqarGate homepage' },
       { type: 'image', src: 'photo/aqargate/aqargate2.png', alt: 'AqarGate property page' },
       { type: 'image', src: 'photo/aqargate/aqargate3.png', alt: 'AqarGate website' },
@@ -389,6 +432,7 @@ window.PROJECTS = [
   {
     id: 4,
     title: 'TownTop — Real Estate Platform',
+    liveUrl: 'https://towntop.sa/',
     category: ['wordpress', 'landing'],
     categoryLabel: 'WordPress',
     tags: ['WordPress', 'PHP', 'MySQL', 'REGA API', 'Nafath API'],
@@ -485,7 +529,8 @@ window.PROJECTS = [
   {
   id: 5,
   title: 'Ahmed Hamdy — Personal Portfolio',
-  category: ['wordpress', 'landing'],
+  liveUrl: 'https://ahmedhamdy.condpay.com/',
+  category: ['wordpress'],
   categoryLabel: 'WordPress',
   tags: ['WordPress', 'Elementor', 'PHP', 'HTML', 'CSS', 'JavaScript'],
   year: '2026',
@@ -570,10 +615,308 @@ window.PROJECTS = [
     ],
   },
   },
-  { id:6,  title:'Bloom — E-commerce',     category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Shopify'],               year:'2023', desc:'Custom Shopify theme for a sustainable cosmetics brand. Mobile-first with high emphasis on product imagery.',           img:'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=700&q=80' },
-  { id:7,  title:'Mira — Health App',      category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Health','Tailwind'],   year:'2023', desc:'App landing page for a mental wellness startup. Warm, accessible design with strong social proof.',                    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80' },
-  { id:8,  title:'Noto — Agency Rebrand',  category:'agency',    categoryLabel:'Agency',       tags:['Agency','Rebrand'],                  year:'2023', desc:'Full rebrand and website for a digital communications agency in Lyon.',                                                img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80' },
-  { id:9,  title:'Kova — E-commerce',      category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Figma'],                year:'2023', desc:'Product page redesign and checkout optimisation for a DTC furniture brand. Reduced cart abandonment by 18%.',         img:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80' },
+  // Executive
+  {
+  id: 6,
+  title: 'Executive — Office Management Platform',
+  liveUrl: 'https://executive3.xbees.net/',
+  category: 'saas',
+  categoryLabel: 'Laravel',
+  tags: ['Laravel', 'Filament', 'PHP', 'MySQL', 'Blade', 'REST APIs'],
+  year: '2026',
+
+  desc: 'Developed and enhanced a Laravel-based office management platform with a custom Filament admin panel, dynamic page builder, form builder, office management, and content management features.',
+
+  images: [
+    { type: 'video', src: 'photo/executive/executive.mp4', poster: 'photo/executive/executive1.png' },
+    { type: 'image', src: 'photo/executive/executive1.png', alt: 'Executive admin dashboard' },
+    { type: 'image', src: 'photo/executive/executive2.png', alt: 'Executive Pages resource' },
+    { type: 'image', src: 'photo/executive/executive3.png', alt: 'Executive Offices resource' },
+    { type: 'image', src: 'photo/executive/executive4.png', alt: 'Executive Forms resource' },
+    { type: 'image', src: 'photo/executive/executive5.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive6.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive7.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive8.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive9.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive10.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive11.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive12.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive13.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive14.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive15.png', alt: 'Executive admin panel' },
+    { type: 'image', src: 'photo/executive/executive16.png', alt: 'Executive admin panel' },
+  ],
+
+  caseStudy: {
+    subtitle: 'A Laravel-based office management platform with a custom Filament admin panel that gives administrators full control over website content, pages, forms, offices, events, services, and user submissions.',
+
+    client: 'Executive',
+    role: 'Laravel / Filament Developer',
+    timeline: '2026',
+    status: 'Live',
+    deliverables: 'Laravel, PHP, Filament, MySQL, Blade',
+
+    stats: [
+      { value: '10+', label: 'Admin Resources' },
+      { value: 'Custom', label: 'Page Builder' },
+      { value: 'Custom', label: 'Form Builder' },
+    ],
+
+    content: [
+      { type: 'heading', text: 'Project Overview' },
+
+      { type: 'paragraph', text: 'Executive is a live office management platform designed to manage a network of offices across different locations in Egypt and Saudi Arabia. I worked on the Laravel backend and built and customized the Filament admin panel to give administrators flexible control over the platform and its content.' },
+
+      { type: 'heading', text: 'Custom Page Builder' },
+
+      { type: 'paragraph', text: 'One of the main parts I worked on was building a flexible page management system using Laravel and Filament. Instead of creating every website page directly in code, administrators can build and update pages from the dashboard using reusable content blocks.' },
+
+      { type: 'list', items: [
+        'Converted HTML template sections into reusable content blocks.',
+        'Built the block structure and fields required for each section.',
+        'Allowed administrators to add, remove, and reorder blocks to build pages.',
+        'Gave administrators control over page content such as text, images, and section data without changing the code.',
+        'Connected the page builder with the frontend so the selected blocks are rendered dynamically.',
+      ] },
+
+      { type: 'heading', text: 'Filament Admin Panel' },
+
+      { type: 'paragraph', text: 'Developed and customized multiple Filament Resources to manage the main platform data and content directly from the admin panel.' },
+
+      { type: 'list', items: [
+        'Pages — dynamic page creation and block-based content management.',
+        'Offices — manage office listings, locations, types, relationships, and contact information.',
+        'Events — create and manage events with dates, locations, images, and status.',
+        'Services — manage the services displayed across the platform.',
+        'Posts, Categories & Tags — manage the platform content and its organization.',
+        'Users — manage registered platform users.',
+        'Site Settings — manage global website settings and content.',
+      ] },
+
+      { type: 'heading', text: 'Custom Form Builder' },
+
+      { type: 'paragraph', text: 'I also worked on a custom form management system that allows administrators to create forms and define their fields from the dashboard instead of relying on fixed forms built into the code.' },
+
+      { type: 'list', items: [
+        'Created a flexible resource for managing website forms.',
+        'Allowed administrators to define and manage form fields.',
+        'Connected forms to the frontend pages through the page management system.',
+        'Built a Form Submissions resource to collect and manage messages submitted through the website.',
+        'Tracked submission information to identify who submitted each request and where it came from.',
+      ] },
+
+      { type: 'heading', text: 'Office Management' },
+
+      { type: 'paragraph', text: 'The platform is built around managing multiple offices across different locations. I worked on the admin functionality that allows the business team to manage these offices and their related information from one place.' },
+
+      { type: 'list', items: [
+        'Created and managed office records from the Filament dashboard.',
+        'Managed office locations, types, relationships, contact information, and other office data.',
+        'Structured the admin resources to make managing a large number of offices easier.',
+      ] },
+
+      { type: 'heading', text: 'Content & User Management' },
+
+      { type: 'list', items: [
+        'Built structured admin resources for Events, Services, Posts, Categories, and Tags.',
+        'Managed registered users and their platform activity through the admin panel.',
+        'Centralized website content management inside Filament.',
+        'Added search, filtering, status management, and structured data management across resources.',
+      ] },
+
+      { type: 'heading', text: 'My Role' },
+
+      { type: 'paragraph', text: 'My work focused on the Laravel backend and Filament admin architecture, including resource development, custom forms, dynamic page building, content management, and connecting the admin-managed data with the website frontend.' },
+
+      { type: 'heading', text: 'Process' },
+
+      { type: 'steps', items: [
+        {
+          title: 'Analyze',
+          desc: 'Reviewed the template, requirements, data structure, and application flow to define the required admin features.'
+        },
+        {
+          title: 'Build',
+          desc: 'Converted HTML sections into reusable Filament blocks and built the dynamic Page Builder.'
+        },
+        {
+          title: 'Develop',
+          desc: 'Built and customized Filament Resources, Forms, Submissions, Offices, Events, Services, Posts, and Users.'
+        },
+        {
+          title: 'Connect',
+          desc: 'Connected the admin-managed content and data with the frontend for dynamic website management.'
+        },
+        {
+          title: 'Test & Deliver',
+          desc: 'Tested the main admin and frontend workflows and delivered the live platform to the client.'
+        },
+      ] 
+      },
+      { type: 'heading', text: 'Skills Demonstrated' },
+      { type: 'list', items: [
+        'Laravel Development',
+        'Filament Admin Panel',
+        'Filament Resources & Forms',
+        'Custom Page Builder Architecture',
+        'Dynamic Content Management',
+        'Custom Form Builder',
+        'MySQL & Eloquent ORM',
+        'Laravel Blade',
+        'Admin Dashboard Development',
+        'Business Data Modeling',
+        'Backend Debugging & Troubleshooting',
+      ] },
+
+      { type: 'heading', text: 'Result' },
+
+      { type: 'paragraph', text: 'Delivered a flexible Laravel and Filament-based management system that allows the business team to manage offices, users, content, forms, submissions, and website pages from a centralized admin panel. The custom page builder also gives administrators the ability to create and modify website pages using reusable blocks without requiring code changes.' },
+    ],
+  },
+  },
+  // Eshlf
+  {
+    id: 7,
+    title: 'ESHLF — Logistics & Services Marketplace',
+    category: 'saas',
+    categoryLabel: 'Laravel',
+
+    tags: [
+      'Laravel',
+      'Filament',
+      'PHP',
+      'MySQL',
+      'REST APIs',
+      'WebSockets',
+      'RBAC',
+      'Mason',
+      'Curator'
+    ],
+
+    year: '2026',
+
+    liveButton: {
+      label: 'Under Development',
+      disabled: true
+    },
+
+    desc: 'A Laravel-based logistics and services marketplace connecting companies that need transportation or operational services with companies and service providers that can fulfill them. Worked on the backend, business logic, APIs, permissions, **real-time live chat and location tracking**, **Paymob payment integration**, and a custom **Filament CMS**.',
+
+    images: [
+      {
+        type: 'image',
+        src: 'photo/eshlf/eshlf1.png',
+        alt: 'ESHLF admin dashboard'
+      },
+    ],
+
+    caseStudy: {
+      subtitle: 'A logistics and business services marketplace connecting companies with transportation and operational service providers. The mobile application is the main product, while the website provides the public and marketing experience.',
+
+      client: 'ESHLF',
+      role: 'Laravel / Filament Developer',
+      timeline: '2026',
+      status: 'Under Development',
+      deliverables: 'Laravel, PHP, Filament, MySQL, REST APIs, WebSockets',
+
+      stats: [
+        { value: 'Custom', label: 'RBAC System' },
+        { value: 'Real-Time', label: 'Chat & Notifications' },
+        { value: 'Custom', label: 'Admin CMS & Page Builder' },
+      ],
+
+      content: [
+
+        { type: 'heading', text: 'Project Overview' },
+
+        {
+          type: 'paragraph',
+          text: 'ESHLF is a logistics and business services marketplace that connects companies looking for transportation and operational services with companies and service providers that can fulfill those needs.'
+        },
+
+        {
+          type: 'paragraph',
+          text: 'I worked on the Laravel backend and Filament administration system, covering business logic, APIs, permissions, company management, **live chat and location**, **push notifications**, **Paymob payment** integration, and a custom **CMS**.'
+        },
+
+        { type: 'heading', text: 'What I Worked On' },
+
+        {
+          type: 'list',
+          items: [
+            'Developed and maintained the Laravel backend and business logic.',
+            'Built REST APIs to support the mobile application.',
+            'Developed company, user, employee, and driver management.',
+            'Implemented **Role-Based Access Control (RBAC)** for platform and company users (Authentication and Authorization).',
+            'Implemented **OTP-based** verification for user authentication and account verification.',
+            'Developed marketplace functionality for service requests, deals, deliveries, and related operations.',
+            'Implemented **live chat and location** using WebSockets.',
+            'Built **push notification** functionality for important platform activities, with user-level notification permissions.',
+            'Worked on wallet, payment, transaction, and revenue distribution features, integrating **Paymob** as the payment gateway.',
+            'Developed invitation and onboarding functionality.',
+            'Built and customized the **Filament admin panel** for managing the platform.',
+            'Developed a custom **CMS and Page Builder** for the public website.',
+            'Converted sections from the Babun HTML template into reusable **CMS blocks** using the **Mason plugin**.',
+            'Integrated the **Curator plugin** for centralized **media management**.',
+            'Managed website pages, services, posts, events, forms, submissions, and **global settings**.'
+          ]
+        },
+
+        { type: 'heading', text: 'Admin & CMS' },
+
+        { type: 'paragraph', text: 'Built and customized a Filament-based administration system to manage the platform and its public website from a centralized dashboard.' },
+        { type: 'paragraph', text: 'I also developed a **separate CMS cluster** for managing the website-related content and functionality, keeping CMS responsibilities organized separately from the core marketplace administration.' },
+
+        {
+          type: 'list',
+          items: [
+            'Users and companies.',
+            'Roles and permissions.',
+            'Company documents and verification.',
+            'Service requests, deals, and deliveries.',
+            'Payments and revenue distributions.',
+            'Website pages and content.',
+            '**Forms and submissions.**',
+            '**Global website settings.**',
+            'Media management.'
+          ]
+        },
+
+        { type: 'heading', text: 'My Role' },
+
+        {
+          type: 'paragraph',
+          text: 'My role focused mainly on Laravel backend development and Filament administration. I worked across the core business logic, REST APIs, RBAC, company management, marketplace operations, real-time chat and location, notifications, financial features, and the custom CMS.'
+        },
+
+        { type: 'heading', text: 'Technologies' },
+
+        {
+          type: 'list',
+          items: [
+            'Laravel',
+            'PHP',
+            'Filament',
+            'MySQL',
+            'REST APIs',
+            'WebSockets',
+            'RBAC',
+            'Mason plugin',
+            'Curator plugin'
+          ]
+        },
+
+        { type: 'heading', text: 'Result' },
+
+        {
+          type: 'paragraph',
+          text: 'Developed a complete Laravel backend and administration system supporting the marketplace core operations, mobile application, financial features, real-time communication and location, and public website management.'
+        }
+      ],
+    },
+  },
+  // { id:8,  title:'Noto — Agency Rebrand',  category:'agency',    categoryLabel:'Agency',       tags:['Agency','Rebrand'],                  year:'2023', desc:'Full rebrand and website for a digital communications agency in Lyon.',                                                img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80' },
+  // { id:9,  title:'Kova — E-commerce',      category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Figma'],                year:'2023', desc:'Product page redesign and checkout optimisation for a DTC furniture brand. Reduced cart abandonment by 18%.',         img:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80' },
 ];
 
 // Fill in `img` (card thumbnail) and `caseStudy.heroImg` from a project's own
