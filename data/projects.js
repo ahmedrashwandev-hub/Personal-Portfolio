@@ -356,37 +356,37 @@ window.PROJECTS = [
 
         { type: 'subheading', text: 'Performance Optimization' },
         { type: 'list', items: [
-          'Investigated a login issue that caused requests to take around 16 seconds.',
-          'Debugged the backend and database flow to identify the source of the delay.',
-          'Resolved the issue and reduced the response time to around 2 seconds.',
+          'Investigated a critical login issue causing requests to take around **16 seconds**.',
+          '**Debugged the backend and database flow** to identify the root cause of the delay.',
+          'Resolved the issue and **reduced response time from 16s to ~2s** — an **8x performance improvement**.',
         ] },
 
         { type: 'subheading', text: 'REGA Integration & Property Sync' },
         { type: 'list', items: [
-          'Integrated the REGA API using the provided documentation.',
-          'Implemented and maintained the flow for retrieving property data using the advertisement license number.',
-          'Debugged and fixed issues in property data retrieval and synchronization.',
-          'Worked with both individual and bulk property synchronization to keep property information updated.',
+          '**Integrated the REGA API** end-to-end using official government documentation.',
+          'Implemented and maintained the flow for **retrieving property data via the advertisement license number**.',
+          '**Debugged and resolved** issues in property data retrieval and synchronization.',
+          'Built and maintained both **individual and bulk property synchronization** to keep listings continuously updated.',
         ] },
 
         { type: 'subheading', text: 'Nafath Integration' },
         { type: 'list', items: [
-          'Integrated Nafath APIs for identity verification and authentication.',
-          'Handled API requests, responses, and integration-related issues based on the provided documentation.',
+          '**Integrated Nafath APIs** for national **identity verification and authentication**.',
+          'Handled API requests, responses, and integration issues per official documentation.',
         ] },
 
         { type: 'subheading', text: 'Houzez Theme Upgrade' },
         { type: 'list', items: [
-          'Updated the Houzez Parent Theme to a newer version.',
-          'The existing Child Theme was built around an older Houzez version and became incompatible after the update.',
-          'Updated the Child Theme customizations and fixed compatibility issues until it worked correctly with the new Parent Theme.',
+          '**Upgraded the Houzez Parent Theme** to a newer version on a live production site.',
+          'Identified that the existing **Child Theme** — built on an older Houzez version — became **incompatible** after the upgrade.',
+          '**Fixed all compatibility issues**, restoring full functionality on the new Parent Theme with zero feature loss.',
         ] },
 
         { type: 'subheading', text: 'API Logging & Debugging' },
         { type: 'list', items: [
-          'Implemented centralized logging for REGA and Nafath integrations.',
-          'Tracked API requests, responses, and errors to identify where integration problems occurred.',
-          'Made API-related debugging and troubleshooting faster and easier.',
+          'Designed and implemented **centralized logging** for REGA and Nafath integrations.',
+          'Tracked API requests, responses, and errors to **pinpoint integration failures**.',
+          '**Cut API debugging and troubleshooting time significantly** through structured, traceable logs.',
         ] },
 
         { type: 'heading', text: 'Technical Work' },
@@ -418,7 +418,7 @@ window.PROJECTS = [
     desc: 'Developing a Saudi real estate platform using WordPress, PHP, and a customized RealHomes Child Theme, with Nafath authentication, REGA property integration, individual and bulk synchronization, and detailed API logging.',
 
     images: [
-      { type: 'video', src: 'photo/towntop/TownTop.mp4', poster: 'photo/towntop/towntop1.png' },
+      { type: 'video', src: 'photo/towntop/towntop.mp4', poster: 'photo/towntop/towntop1.png' },
       { type: 'image', src: 'photo/towntop/towntop1.png', alt: 'TownTop homepage' },
       { type: 'image', src: 'photo/towntop/towntop2.png', alt: 'TownTop website' },
       { type: 'image', src: 'photo/towntop/towntop3.png', alt: 'TownTop website' },
@@ -457,32 +457,32 @@ window.PROJECTS = [
 
         { type: 'subheading', text: 'Nafath Authentication' },
         { type: 'list', items: [
-          'Integrated Nafath for identity verification and authentication.',
-          'Implemented the integration flow for user login and new user registration.',
-          'Handled API requests, responses, and integration errors.',
+          '**Integrated Nafath** for national **identity verification and authentication**.',
+          'Implemented the full integration flow for **user login and new user registration**.',
+          'Handled API requests, responses, and **integration error cases**.',
         ] },
 
         { type: 'subheading', text: 'REGA Property Integration' },
         { type: 'list', items: [
-          'Connected TownTop with the Saudi REGA platform to retrieve and manage property data.',
-          'Implemented property retrieval and synchronization flows.',
-          'Supported both individual and bulk property synchronization.',
-          'Debugged synchronization issues and handled property data updates.',
+          '**Connected TownTop with the Saudi REGA platform** to retrieve and manage property data.',
+          'Implemented **property retrieval and synchronization flows** from scratch.',
+          'Supported both **individual and bulk property synchronization**.',
+          '**Debugged synchronization issues** and resolved property data update failures.',
         ] },
 
         { type: 'subheading', text: 'API Logging & Monitoring' },
         { type: 'list', items: [
-          'Implemented detailed logging for Nafath and REGA API interactions.',
+          'Designed and implemented **detailed logging** for Nafath and REGA API interactions.',
           'Tracked requests, responses, errors, and related operations.',
-          'Made it possible to trace an API operation and identify where an issue occurred.',
-          'Used the logs to investigate problems related to specific users and synchronization operations.',
+          'Made it possible to **trace any API operation** and identify exactly where an issue occurred.',
+          'Used the logs to **investigate and resolve** issues tied to specific users and synchronization runs.',
         ] },
 
         { type: 'subheading', text: 'RealHomes Child Theme' },
         { type: 'list', items: [
-          'Developed and customized the Child Theme using PHP.',
-          'Extended the RealHomes Parent Theme to support the platform requirements.',
-          'Implemented custom backend functionality while maintaining the existing theme structure.',
+          '**Developed and customized the Child Theme** using PHP.',
+          'Extended the **RealHomes Parent Theme** to support the platform requirements.',
+          'Implemented **custom backend functionality** while preserving the existing theme structure.',
         ] },
 
         { type: 'heading', text: 'Technical Work' },
