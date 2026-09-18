@@ -169,7 +169,7 @@ window.PROJECTS = [
 
     {
       type: 'heading',
-      text: 'Skills Demonstrated'
+      text: 'Technical Work'
     },
     {
       type: 'list',
@@ -287,7 +287,7 @@ window.PROJECTS = [
           'Tested the main website features after deployment.'
         ] },
 
-        { type: 'heading', text: 'Skills demonstrated' },
+        { type: 'heading', text: 'Technical Work' },
         { type: 'list', items: [
           'WordPress Development',
           'WooCommerce',
@@ -453,7 +453,7 @@ window.PROJECTS = [
         { type: 'heading', text: 'Project Overview' },
         { type: 'paragraph', text: 'TownTop is a Saudi real estate platform currently under development. I worked on the backend functionality, custom PHP development, government API integrations, authentication flows, and property synchronization using a customized RealHomes Child Theme.' },
 
-        { type: 'heading', text: 'Key Work' },
+        { type: 'heading', text: 'What I Worked On' },
 
         { type: 'subheading', text: 'Nafath Authentication' },
         { type: 'list', items: [
@@ -645,93 +645,70 @@ window.PROJECTS = [
 
       { type: 'paragraph', text: 'Executive is a live office management platform designed to manage a network of offices across different locations in Egypt and Saudi Arabia. I worked on the Laravel backend and built and customized the Filament admin panel to give administrators flexible control over the platform and its content.' },
 
-      { type: 'heading', text: 'Custom Page Builder' },
+      { type: 'heading', text: 'What I Worked On' },
 
-      { type: 'paragraph', text: 'One of the main parts I worked on was building a flexible page management system using Laravel and Filament. Instead of creating every website page directly in code, administrators can build and update pages from the dashboard using reusable content blocks.' },
+      { type: 'subheading', text: 'Custom Page Builder' },
+
+      { type: 'paragraph', text: 'Worked on a flexible page management system built with Laravel and Filament, allowing administrators to create and manage website pages using reusable content blocks.' },
 
       { type: 'list', items: [
-        'Converted HTML template sections into reusable content blocks.',
-        'Built the block structure and fields required for each section.',
-        'Allowed administrators to add, remove, and reorder blocks to build pages.',
-        'Gave administrators control over page content such as text, images, and section data without changing the code.',
-        'Connected the page builder with the frontend so the selected blocks are rendered dynamically.',
+        '**Converted HTML template sections** into reusable content blocks.',
+        'Built the **block structure and fields** required for each section.',
+        'Allowed administrators to **add, remove, and reorder blocks** to build pages.',
+        'Gave administrators **full control over page content** — text, images, and section data — **without touching code**.',
+        'Connected the page builder with the frontend so selected blocks are **rendered dynamically**.',
       ] },
 
-      { type: 'heading', text: 'Filament Admin Panel' },
+      { type: 'subheading', text: 'Filament Admin Panel' },
 
-      { type: 'paragraph', text: 'Developed and customized multiple Filament Resources to manage the main platform data and content directly from the admin panel.' },
+      { type: 'paragraph', text: '**Developed and customized multiple Filament Resources** to manage the main platform data and content directly from the admin panel.' },
 
       { type: 'list', items: [
-        'Pages — dynamic page creation and block-based content management.',
-        'Offices — manage office listings, locations, types, relationships, and contact information.',
-        'Events — create and manage events with dates, locations, images, and status.',
-        'Services — manage the services displayed across the platform.',
-        'Posts, Categories & Tags — manage the platform content and its organization.',
-        'Users — manage registered platform users.',
-        'Site Settings — manage global website settings and content.',
+        '**Pages** — dynamic page creation and block-based content management.',
+        '**Offices** — manage office listings, locations, types, relationships, and contact information.',
+        '**Events** — create and manage events with dates, locations, images, and status.',
+        '**Services** — manage the services displayed across the platform.',
+        '**Posts, Categories & Tags** — manage platform content and its organization.',
+        '**Users** — manage registered platform users.',
+        '**Site Settings** — manage global website settings and content.',
       ] },
 
-      { type: 'heading', text: 'Custom Form Builder' },
+      { type: 'subheading', text: 'Custom Form Builder' },
 
-      { type: 'paragraph', text: 'I also worked on a custom form management system that allows administrators to create forms and define their fields from the dashboard instead of relying on fixed forms built into the code.' },
+      { type: 'paragraph', text: 'Built a **custom form management system** that lets administrators create forms and define their fields from the dashboard — instead of relying on fixed forms hard-coded into the platform.' },
 
       { type: 'list', items: [
-        'Created a flexible resource for managing website forms.',
-        'Allowed administrators to define and manage form fields.',
-        'Connected forms to the frontend pages through the page management system.',
-        'Built a Form Submissions resource to collect and manage messages submitted through the website.',
-        'Tracked submission information to identify who submitted each request and where it came from.',
+        'Created a **flexible resource for managing website forms**.',
+        'Allowed administrators to **define and manage form fields**.',
+        'Connected forms to frontend pages through the page management system.',
+        'Built a **Form Submissions resource** to collect and manage messages submitted through the website.',
+        '**Tracked submission data** to identify who submitted each request and where it came from.',
       ] },
 
-      { type: 'heading', text: 'Office Management' },
+      { type: 'subheading', text: 'Office Management' },
 
-      { type: 'paragraph', text: 'The platform is built around managing multiple offices across different locations. I worked on the admin functionality that allows the business team to manage these offices and their related information from one place.' },
+      { type: 'paragraph', text: 'Built the **office management functionality** for a platform serving **multiple office locations**.' },
 
       { type: 'list', items: [
-        'Created and managed office records from the Filament dashboard.',
+        'Created and managed **office records** from the Filament dashboard.',
         'Managed office locations, types, relationships, contact information, and other office data.',
-        'Structured the admin resources to make managing a large number of offices easier.',
+        '**Structured the admin resources** to make managing a large number of offices easier.',
       ] },
 
-      { type: 'heading', text: 'Content & User Management' },
+      { type: 'subheading', text: 'Content & User Management' },
 
       { type: 'list', items: [
-        'Built structured admin resources for Events, Services, Posts, Categories, and Tags.',
+        'Built **structured admin resources** for Events, Services, Posts, Categories, and Tags.',
         'Managed registered users and their platform activity through the admin panel.',
-        'Centralized website content management inside Filament.',
-        'Added search, filtering, status management, and structured data management across resources.',
+        '**Centralized website content management** inside Filament.',
+        'Added **search, filtering, status management**, and structured data management across resources.',
       ] },
 
       { type: 'heading', text: 'My Role' },
 
       { type: 'paragraph', text: 'My work focused on the Laravel backend and Filament admin architecture, including resource development, custom forms, dynamic page building, content management, and connecting the admin-managed data with the website frontend.' },
 
-      { type: 'heading', text: 'Process' },
-
-      { type: 'steps', items: [
-        {
-          title: 'Analyze',
-          desc: 'Reviewed the template, requirements, data structure, and application flow to define the required admin features.'
-        },
-        {
-          title: 'Build',
-          desc: 'Converted HTML sections into reusable Filament blocks and built the dynamic Page Builder.'
-        },
-        {
-          title: 'Develop',
-          desc: 'Built and customized Filament Resources, Forms, Submissions, Offices, Events, Services, Posts, and Users.'
-        },
-        {
-          title: 'Connect',
-          desc: 'Connected the admin-managed content and data with the frontend for dynamic website management.'
-        },
-        {
-          title: 'Test & Deliver',
-          desc: 'Tested the main admin and frontend workflows and delivered the live platform to the client.'
-        },
-      ] 
-      },
-      { type: 'heading', text: 'Skills Demonstrated' },
+      { type: 'heading', text: 'Technical Work' },
       { type: 'list', items: [
         'Laravel Development',
         'Filament Admin Panel',
