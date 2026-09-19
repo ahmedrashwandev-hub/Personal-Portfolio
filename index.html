@@ -904,14 +904,8 @@ strong.mark{color:#3f3f46;font-weight:700;}
 </main>
 
 <footer class="border-t border-zinc-100 dark:border-zinc-900">
-  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-sm text-zinc-400">Ahmed Rashwan. All rights reserved © <span id="yr"></span>. <br>Developed by <a href="https://api.whatsapp.com/send/?phone=201091845823&text=السلام+عليكم&type=phone_number&app_absent=0" target="_blank" class="font-bold">Ahmed Rashwan</a>
-      <!-- • Distributed by <a href="https://themewagon.com/" target="_blank" class="font-bold">ThemeWagon</a></p>-->
-    <p class="text-xs text-zinc-500">Built with
-      <a href="https://tailwindcss.com" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Tailwind CSS</a>
-      &amp;
-      <a href="https://alpinejs.dev" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Alpine.js</a>
-    </p>
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col items-center justify-center gap-4 text-center">
+    <p class="text-sm text-zinc-400">Ahmed Rashwan. All rights reserved © <span id="yr"></span>. <br>Developed by <a href="https://api.whatsapp.com/send/?phone=201091845823&text=السلام+عليكم&type=phone_number&app_absent=0" target="_blank" class="font-bold">Ahmed Rashwan</a></p>
   </div>
 </footer>
 
@@ -938,8 +932,7 @@ function app() {
 
     init() {
       // dark mode
-      this.dark = localStorage.getItem('theme') === 'dark' ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      this.dark = localStorage.getItem('theme') !== 'light';
       this.$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
 
       // scroll
