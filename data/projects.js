@@ -30,7 +30,7 @@ window.PROJECTS = [
   // XApps
   {
   id: 1,
-  title: 'XApps — Corporate Website\n ( More Details )',
+  title: 'XApps — Corporate Website',
   liveUrl: 'https://www.xapps.co/',
   category: 'wordpress',
   categoryLabel: 'WordPress',
@@ -199,7 +199,7 @@ window.PROJECTS = [
   // Altuwayjiri
   {
     id: 2,
-    title: 'Altuwayjiri — Electronics E-commerce Platform\n ( More Details )',
+    title: 'Altuwayjiri — Electronics E-commerce Platform',
     liveUrl: 'https://altuwayjiri.com/',
     category: 'wordpress',
     categoryLabel: 'WordPress',
@@ -312,7 +312,7 @@ window.PROJECTS = [
   // AqarGate
   {
     id: 3,
-    title: 'AqarGate — Real Estate Platform\n( More Details )',
+    title: 'AqarGate — Real Estate Platform',
     liveUrl: 'https://aqargate.com/marketplace',
     category: ['wordpress', 'landing'],
     categoryLabel: 'WordPress',

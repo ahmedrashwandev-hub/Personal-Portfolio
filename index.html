@@ -75,6 +75,10 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 .stag{transition:border-color .18s,color .18s,background-color .18s}
 
 [x-cloak]{display:none!important}
+
+/* **bold** highlight, same style used for project case studies */
+strong.mark{color:#3f3f46;font-weight:700;}
+.dark strong.mark{color:#c4c4c8;}
 </style>
 </head>
 
@@ -198,24 +202,24 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
         <div class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
           <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">UI/UX Design</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">I create modern, responsive, and user-friendly interfaces using HTML5, CSS3, JavaScript, and Angular. I focus on delivering clean layouts and seamless user experiences that align with business goals.</p>
+        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-orange-500 mb-3">UI/UX Design</h3>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" data-md>I have experience designing **user interfaces** and **user experiences** using **Figma**. I create clean, responsive, and user-friendly designs with a focus on usability, layout, and overall user experience.</p>
       </article>
 
       <article class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
         <div class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
           <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-white mb-3">Web Development</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">I design and build full-stack web applications using PHP, Laravel, and MySQL. My focus is on creating scalable, secure, and high-performance solutions with clean architecture and maintainable code.</p>
+        <h3 class="font-display font-bold text-xl text-orange-500 mb-3">Web Development</h3>
+        <p class="text-sm text-zinc-400 leading-relaxed" data-md>I design and build full-stack web applications using **PHP, Laravel, MySQL, and WordPress**. My focus is on creating scalable, secure, and high-performance solutions with clean architecture and maintainable code. I also have experience in WordPress development, customization, and troubleshooting.</p>
       </article>
 
       <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
         <div class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
           <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">API Development</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">I build and integrate RESTful APIs that connect front-end applications with backend services. I ensure efficiency, security, and smooth data flow across systems.</p>
+        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-orange-500 mb-3">API Development</h3>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" data-md>I build and integrate RESTful APIs for communication between **frontend and mobile applications**, **backend services**, and **third-party platforms**. I also handle **backend-to-backend integrations**, focusing on secure, efficient, and reliable data exchange across systems.</p>
       </article>
 
     </div>
@@ -264,7 +268,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
                 </template>
               </div>
               <a :href="p.url">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors whitespace-pre-line" x-text="p.title"></h3>
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors whitespace-pre-line"><span x-text="p.title"></span><br><span class="text-sm">( More Details )</span></h3>
               </a>
               <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4" x-text="p.desc"></p>
               <div class="flex items-center justify-between mt-auto">
@@ -990,5 +994,13 @@ window.addEventListener('pageshow', function () {
 >
   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
+
+<script>
+  // Turn **word** into a highlighted <strong> inside any element marked with data-md,
+  // same convention used for **bold** text in data/projects.js / case-study.html.
+  document.querySelectorAll('[data-md]').forEach(el => {
+    el.innerHTML = el.textContent.replace(/\*\*(.+?)\*\*/g, '<strong class="mark">$1</strong>');
+  });
+</script>
 </body>
 </html>
